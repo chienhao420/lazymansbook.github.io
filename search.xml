@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一篇文章</title>
-    <url>/2020/08/22/test/</url>
-    <content><![CDATA[<p>###yolo</p>
-]]></content>
+    <title>Hexo &amp; Gitpage搭建記錄</title>
+    <url>/2020/08/26/hexo-gitpage-setup-memo/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">密碼都告訴你了</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="10ce19e36f22d19d891673e7e5b76db3cf13d4d12c25b35349c6147595e2e699">2751d6f97c279480e6c9dc44f781900c</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-        <category>Testing</category>
+        <category>技術</category>
       </categories>
       <tags>
-        <tag>測試</tag>
+        <tag>hexo</tag>
+        <tag>gitpage</tag>
+        <tag>blog</tag>
+        <tag>搭建博客</tag>
       </tags>
   </entry>
   <entry>
@@ -29,5 +39,17 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一篇文章</title>
+    <url>/2020/08/22/test/</url>
+    <content><![CDATA[<p>###yolo</p>
+]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>測試</tag>
+      </tags>
   </entry>
 </search>
