@@ -3,47 +3,138 @@
   <entry>
     <title>Hexo &amp; Gitpage搭建記錄</title>
     <url>/2020/08/26/hexo-gitpage-setup-memo/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">密碼都告訴你了</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="10ce19e36f22d19d891673e7e5b76db3cf13d4d12c25b35349c6147595e2e699">2751d6f97c279480e6c9dc44f781900c</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <content><![CDATA[<p>[TOC]</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/cover.png"></p>
+<h1 id="【記錄搭建過程】"><a href="#【記錄搭建過程】" class="headerlink" title="【記錄搭建過程】"></a>【記錄搭建過程】</h1><ul>
+<li><p>Github 賬號</p>
+<ul>
+<li>設置Github pages</li>
+</ul>
+</li>
+<li><p>環境配置</p>
+<ul>
+<li>Node.js （為了可以用<code>npm</code>命令）</li>
+<li>Git工具</li>
+<li>Hexo（用npm來安裝的博客框架，用來生成網站博客）</li>
+<li>配置本機與Github SSH連接</li>
+</ul>
+</li>
+<li><p>域名</p>
+<ul>
+<li>需設置DNS</li>
+<li>設置CNAME</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="【原理】"><a href="#【原理】" class="headerlink" title="【原理】"></a>【原理】</h2><p>博客架設在Github上會是一個靜態的網頁，Github的作用就是進行網頁相關的文件進行儲存，Hexo的作用則是生成這些網頁文件，Node.js則是可以使用這個Hexo的框架，並且將Hexo生成的網頁文件上傳到Github中。</p>
+<p><strong>Q：為何Github除了儲存網頁文件之外還能顯示？</strong></p>
+<p>利用了Github提供的Github Page的功能，可讀取Github Repo中的index文件</p>
+<p><strong>Q：Hexo框架扮演著什麼角色？</strong></p>
+<p>把他想象成MS Word，安裝和操作方式只能透過Node.js來使用。你在使用這個“Word”記錄文章，這個“Word”會用默認的模板並且將你的記錄文章生成出一個靜態網頁。</p>
+<hr>
+<h1 id="【準備賬號-環境】"><a href="#【準備賬號-環境】" class="headerlink" title="【準備賬號/環境】"></a>【準備賬號/環境】</h1><ul>
+<li><h2 id="建立倉庫"><a href="#建立倉庫" class="headerlink" title="建立倉庫"></a>建立倉庫</h2></li>
+</ul>
+<p>建立Github賬號後進行下面操作</p>
+<blockquote>
+<p>1：新建立一個Repository：</p>
+</blockquote>
+<p>右上角點擊New repository即可開始建立一個‘倉庫’，如下圖</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/git1.png" alt="新建立一個Repository"></p>
+<p>接著後面會有一個大坑後面會著重記錄。</p>
+<p>Repository name：這裡設置你博客的鏈接名稱，後面要加上<code>.github.io</code>後綴</p>
+<p>舉例: chienhao420/<strong><em>yourblog.github.io</em></strong></p>
+<ul>
+<li><input checked disabled type="checkbox"> 勾選Add a README file</li>
+</ul>
+<p>點擊’Create repository’完成建立倉庫</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/git2.png"></p>
+<ul>
+<li><h2 id="設置-Github-Pages"><a href="#設置-Github-Pages" class="headerlink" title="設置 Github Pages"></a>設置 Github Pages</h2></li>
+</ul>
+<blockquote>
+<p>2：設置該Repo成為Github Pages：</p>
+</blockquote>
+<p>在該Repo中點擊‘Settings’</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/git3.png"></p>
+<p>往下滾動頁面找到Github Pages，按照圖中設置</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/git4.png"></p>
+<p>Branch和root: 這邊可以選擇從根目錄讀取網頁源文件或者其他位置</p>
+<p>Theme: 這邊可以不按照我的設置來選擇,可以直接選擇一個Theme，默認的網頁也會生成，只是有個主題罷了大家也馬上都會換掉</p>
+<p>點擊Save後，看到Your site is ready to be published at…. 就完成了Github page的設置了。</p>
+<p>點開鏈接會顯示404是因為倉庫中沒有東西，若是選擇了Theme就會有東西。這裡因為會馬上換成別的主題，則直接把倉庫裡面留空。</p>
+<hr>
+<h1 id="【配置環境】"><a href="#【配置環境】" class="headerlink" title="【配置環境】"></a>【配置環境】</h1><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js:"></a>Node.js:</h2><p>主頁:  <a href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+<ol>
+<li>下載Stable穩定版即可,一路默認<code>Next</code>到底.</li>
+<li>安裝完畢後鍵盤·Windows 按鍵 + R·，打開·CMD·， 輸入<code>node -v</code>和<code>npm -v</code>。若有出現版本號則表示安裝成功</li>
+</ol>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/node1.png"></p>
+<h2 id="Git工具"><a href="#Git工具" class="headerlink" title="Git工具"></a>Git工具</h2><p>主頁: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<ol>
+<li>一樣按照默認進行安裝，若有看到<code>Use Git from the Windows Command Prompt</code> 或者 <code>Add to Path</code>一定要勾選，這樣才可以直接在CMD（命令提示符）中使用Git</li>
+<li>可在CMD中輸入<code>git --version</code> 驗證是否安裝成功以及版本號。</li>
+</ol>
+<h2 id="安裝Hexo框架"><a href="#安裝Hexo框架" class="headerlink" title="安裝Hexo框架"></a>安裝Hexo框架</h2><p>選擇文件夾路徑作為未來該網站的本地倉庫，所有操作都會透過這個文件夾，所以請不要隨意放在桌面上。這邊將以<code>D:\lazy</code>作為舉例</p>
+<p>進入D:\lazy文件夾後，在該文件夾內右鍵點擊<code>Git Bash Here</code> 這樣就會在這個路徑打開Git工具了.這麼做的意義是因為要將Hexo裝在這個文件夾</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/node0.png"></p>
+<p>在Git工具中輸入以下Code:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>等他安裝完成後再輸入<code>hexo -v</code> 進行驗證是否安裝成功</p>
+<h3 id="網站初始化"><a href="#網站初始化" class="headerlink" title="網站初始化"></a>網站初始化</h3><ol>
+<li>Hexo安裝完畢後接著在Git工具中繼續輸入<code>hexo init</code>初始化網站所需要的各個文件</li>
+<li>.接著輸入<code>npm install</code>安裝必備的組件</li>
+<li>一切準備就緒後輸入 <code>hexo g</code> 然後 <code>hexo s</code>; 打開瀏覽器輸入<code>localhost:4000/</code>即可看到你的網頁了，看到後按下<code>ctrl + c</code>關閉本地服務器預覽.</li>
+</ol>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/node2.png"></p>
+<p><em>常用命令解釋</em> :</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hexo clean</td>
+<td><code>clean</code>刪除本地生成的網頁文件</td>
+</tr>
+<tr>
+<td>hexo g</td>
+<td><code>generate</code>本都生成網頁文件</td>
+</tr>
+<tr>
+<td>hexo s</td>
+<td><code>server</code>在本地 <code>localhost:4000/</code> 瀏覽</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td><code>deploy</code>同步網頁文件至Github上</td>
+</tr>
+<tr>
+<td>Ctrl + C</td>
+<td><strong>停止工具中的進行中的事項，這不是複製的快捷鍵！</strong></td>
+</tr>
+</tbody></table>
+<p>*Git工具中複製，和黏貼請使用鼠標右鍵，快捷鍵的功能在Git中效果不一樣。</p>
+<p>未完待續…</p>
+]]></content>
       <categories>
         <category>技術</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>gitpage</tag>
-        <tag>blog</tag>
+        <tag>Hexo</tag>
+        <tag>Gitpage</tag>
+        <tag>Blog</tag>
         <tag>搭建博客</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/08/21/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>第一篇文章</title>
     <url>/2020/08/22/test/</url>
-    <content><![CDATA[<p>###yolo</p>
+    <content><![CDATA[<p>#YOLO</p>
 ]]></content>
       <categories>
         <category>Testing</category>
