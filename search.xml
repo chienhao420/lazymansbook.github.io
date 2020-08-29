@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo &amp; Gitpage搭建記錄</title>
+    <title>Hexo &amp; Gitpage搭建記錄 【長】</title>
     <url>/2020/08/26/hexo-gitpage-setup-memo/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<p><img src="/2020/08/26/hexo-gitpage-setup-memo/cover.png"></p>
+    <content><![CDATA[<p><img src="/2020/08/26/hexo-gitpage-setup-memo/cover.png"></p>
 <h1 id="【記錄搭建過程】"><a href="#【記錄搭建過程】" class="headerlink" title="【記錄搭建過程】"></a>【記錄搭建過程】</h1><ul>
-<li><p>Github 賬號</p>
+<li><p>GitHub 賬號</p>
 <ul>
-<li>設置Github pages</li>
+<li>設置GitHub pages</li>
 </ul>
 </li>
 <li><p>環境配置</p>
@@ -16,7 +15,7 @@
 <li>Node.js （為了可以用<code>npm</code>命令）</li>
 <li>Git工具</li>
 <li>Hexo（用npm來安裝的博客框架，用來生成網站博客）</li>
-<li>配置本機與Github SSH連接</li>
+<li>配置本機與GitHub SSH連接</li>
 </ul>
 </li>
 <li><p>域名</p>
@@ -26,43 +25,44 @@
 </ul>
 </li>
 </ul>
+<p>  雖然教程都很長，但其實很簡單，而且就幾個命令。理解後10分鐘即可架設完畢</p>
 <hr>
-<h2 id="【原理】"><a href="#【原理】" class="headerlink" title="【原理】"></a>【原理】</h2><p>博客架設在Github上會是一個靜態的網頁，Github的作用就是進行網頁相關的文件進行儲存，Hexo的作用則是生成這些網頁文件，Node.js則是可以使用這個Hexo的框架，並且將Hexo生成的網頁文件上傳到Github中。</p>
-<p><strong>Q：為何Github除了儲存網頁文件之外還能顯示？</strong></p>
-<p>利用了Github提供的Github Page的功能，可讀取Github Repo中的index文件</p>
+<h2 id="【原理】"><a href="#【原理】" class="headerlink" title="【原理】"></a>【原理】</h2><p>博客架設在GitHub上會是一個靜態的網頁，GitHub的作用就是進行網頁相關的文件進行儲存，Hexo的作用則是生成這些網頁文件，Node.js則是可以使用這個Hexo的框架，並且將Hexo生成的網頁文件上傳到GitHub中。</p>
+<p><strong>Q：為何GitHub除了儲存網頁文件之外還能顯示？</strong></p>
+<p>利用了GitHub提供的GitHub Page的功能，可讀取GitHub Repo中的index文件</p>
 <p><strong>Q：Hexo框架扮演著什麼角色？</strong></p>
 <p>把他想象成MS Word，安裝和操作方式只能透過Node.js來使用。你在使用這個“Word”記錄文章，這個“Word”會用默認的模板並且將你的記錄文章生成出一個靜態網頁。</p>
 <hr>
 <h1 id="【準備賬號-環境】"><a href="#【準備賬號-環境】" class="headerlink" title="【準備賬號/環境】"></a>【準備賬號/環境】</h1><ul>
 <li><h2 id="建立倉庫"><a href="#建立倉庫" class="headerlink" title="建立倉庫"></a>建立倉庫</h2></li>
 </ul>
-<p>建立Github賬號後進行下面操作</p>
+<p>建立GitHub賬號後進行下面操作</p>
 <blockquote>
 <p>1：新建立一個Repository：</p>
 </blockquote>
 <p>右上角點擊New repository即可開始建立一個‘倉庫’，如下圖</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/git1.png" alt="新建立一個Repository"></p>
 <p>接著後面會有一個大坑後面會著重記錄。</p>
-<p>Repository name：這裡設置你博客的鏈接名稱，後面要加上<code>.github.io</code>後綴</p>
-<p>舉例: chienhao420/<strong><em>yourblog.github.io</em></strong></p>
+<p>Repository name：這裡設置你博客的鏈接名稱，後面要加上<code>.GitHub.io</code>後綴</p>
+<p>舉例: chienhao420/<strong><em>yourblog.GitHub.io</em></strong></p>
 <ul>
 <li><input checked disabled type="checkbox"> 勾選Add a README file</li>
 </ul>
 <p>點擊’Create repository’完成建立倉庫</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/git2.png"></p>
 <ul>
-<li><h2 id="設置-Github-Pages"><a href="#設置-Github-Pages" class="headerlink" title="設置 Github Pages"></a>設置 Github Pages</h2></li>
+<li><h2 id="設置-GitHub-Pages"><a href="#設置-GitHub-Pages" class="headerlink" title="設置 GitHub Pages"></a>設置 GitHub Pages</h2></li>
 </ul>
 <blockquote>
-<p>2：設置該Repo成為Github Pages：</p>
+<p>2：設置該Repo成為GitHub Pages：</p>
 </blockquote>
 <p>在該Repo中點擊‘Settings’</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/git3.png"></p>
-<p>往下滾動頁面找到Github Pages，按照圖中設置</p>
+<p>往下滾動頁面找到GitHub Pages，按照圖中設置</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/git4.png"></p>
 <p>Branch和root: 這邊可以選擇從根目錄讀取網頁源文件或者其他位置</p>
 <p>Theme: 這邊可以不按照我的設置來選擇,可以直接選擇一個Theme，默認的網頁也會生成，只是有個主題罷了大家也馬上都會換掉</p>
-<p>點擊Save後，看到Your site is ready to be published at…. 就完成了Github page的設置了。</p>
+<p>點擊Save後，看到Your site is ready to be published at…. 就完成了GitHub page的設置了。</p>
 <p>點開鏈接會顯示404是因為倉庫中沒有東西，若是選擇了Theme就會有東西。這裡因為會馬上換成別的主題，則直接把倉庫裡面留空。</p>
 <hr>
 <h1 id="【配置環境】"><a href="#【配置環境】" class="headerlink" title="【配置環境】"></a>【配置環境】</h1><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js:"></a>Node.js:</h2><p>主頁:  <a href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
@@ -111,7 +111,7 @@
 </tr>
 <tr>
 <td>hexo d</td>
-<td><code>deploy</code>同步網頁文件至Github上</td>
+<td><code>deploy</code>同步網頁文件至GitHub上</td>
 </tr>
 <tr>
 <td>Ctrl + C</td>
@@ -119,10 +119,109 @@
 </tr>
 </tbody></table>
 <p>*Git工具中複製，和黏貼請使用鼠標右鍵，快捷鍵的功能在Git中效果不一樣。</p>
-<p>未完待續…</p>
+<p>生成默認的網頁主題是Landscape:</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/hexo0.png"></p>
+<hr>
+<h3 id="建立GitHub與本機的鏈接"><a href="#建立GitHub與本機的鏈接" class="headerlink" title="建立GitHub與本機的鏈接"></a>建立GitHub與本機的鏈接</h3><p>要在別台電腦上進行博客內容修改的話是必須要把本機的文件都移動到新設備上，所以也可以每次都做一份備份在GitHub別處。當然不允許任意機器都能隨意的進行上傳，於是就需要生成SSH Key。但這不是必須的步驟，只是安全上的考慮。</p>
+<p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>這邊將用<a href="mailto:&#x6c;&#x61;&#122;&#x79;&#x6d;&#x61;&#x6e;&#x40;&#x6c;&#105;&#x66;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x61;&#122;&#x79;&#x6d;&#x61;&#x6e;&#x40;&#x6c;&#105;&#x66;&#x65;&#x2e;&#x63;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>將出現的內容複製到Github建立SSH的框中，再進行保存。</p>
+<p>接著Git base中輸入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>出現這個則表示成功了.</p>
+<p>若出現Warning: Permanently added the RSA host key for IP address…….的信息的話直接Enter繼續</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/ssh0.png"></p>
+<p>最後打開博客根目錄下的<code>_config.yml</code>修改下面的deploy配置:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:chienhao420/lazymansbook.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>*注意: 冒號的後面都要一個空格否則會生成失敗</p>
+<h1 id="【大坑注意-】"><a href="#【大坑注意-】" class="headerlink" title="【大坑注意!】"></a>【大坑注意!】</h1><p>最長遇到的問題是在本地預覽的時候一切正常，但是deploy上去後卻沒看見有CSS了。光禿禿的只有文字….有人會說一直Hexo clean &amp;&amp; hexo g 就能解決，因為有cache的存在，但我認為大多數都是路徑錯誤。這邊記錄自己的理解</p>
+<p>這個問題最主要的問題是因為路徑沒有設置正確，導致網頁Git page沒有找到CSS等相關文件，只找到了 index.html</p>
+<p>很多博客裡面教學寫到名字要加xxx.git.io，然後新手應該都會搞不清楚到底是要填寫Gitpage生成的xxxx.github.io還是倉庫名xxxx.github.io，還是xxxx.github.io/xxxx.github.io。</p>
+<p>打開Chrome瀏覽器打開開發者工具進入網頁。</p>
+<p>在開發者工具Console tab中能發現未能找到CSS的錯誤代碼，這時候點到Source tab中打開CSS文件，會發現CSS的路徑完全不對。</p>
+<p>例如：lazymansbook.github.io/main.css</p>
+<p>實際上css的路徑應該是<code>lazymansbook.github.io/css/main.css</code></p>
+<p>這邊回到<code>_config.yml</code>找到<code># URL</code>修改url以及root。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;chienhao420.github.io&#x2F;</span><br><span class="line">root: &#x2F;lazymansbook.github.io&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>url填寫的是你的域名，root則是倉庫名稱，這邊出現進入localhost預覽的時候路徑會變成：<a href="http://localhost:4000/lazymansbook.github.io/">http://localhost:4000/lazymansbook.github.io/</a></p>
+<p>但若是將root改成<code>/</code>的話，localhost就會單單變成<a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p>這裡應該就能明白url和root的意義了。</p>
+<p>後來買的域名後就改成為:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;lazyman.life&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>總結：</p>
+<p>一般教學可能會寫到deploy而已，這裡只是設置能正確讓文件上傳到倉庫，而路徑是要在URL裡面進行設置的。測試了好一會的出來的結果，若有人能協助解釋清幫忙。</p>
+<h1 id="【綁定域名】"><a href="#【綁定域名】" class="headerlink" title="【綁定域名】"></a>【綁定域名】</h1><p><img src="/2020/08/26/hexo-gitpage-setup-memo/domain.png"></p>
+<p>怎麼購買就不記錄了，直接進入後台點擊<code>Manage -&gt; Advanced DNS</code>，添加以下信息，原本默認的記錄可以刪除，最後只會有5個自己添加的記錄：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Host</th>
+<th align="left">Value</th>
+<th align="left">TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">A Record</td>
+<td align="left">@</td>
+<td align="left">185.199.108.153</td>
+<td align="left">30 min</td>
+</tr>
+<tr>
+<td align="left">A Record</td>
+<td align="left">@</td>
+<td align="left">185.199.109.153</td>
+<td align="left">Automatic</td>
+</tr>
+<tr>
+<td align="left">A Record</td>
+<td align="left">@</td>
+<td align="left">185.199.110.153</td>
+<td align="left">Automatic</td>
+</tr>
+<tr>
+<td align="left">A Record</td>
+<td align="left">@</td>
+<td align="left">185.199.111.153</td>
+<td align="left">Automatic</td>
+</tr>
+<tr>
+<td align="left">CNAME Record</td>
+<td align="left">www</td>
+<td align="left">lazymansbook.github.io.</td>
+<td align="left">30 min</td>
+</tr>
+</tbody></table>
+<p>這裡可以找到CNAME的Value，在刪除.git即可</p>
+<p><img src="/2020/08/26/hexo-gitpage-setup-memo/domain1.png"></p>
+<p>接下來回到本地博客目錄下的<code>source</code>文件夾內建立一個沒有後綴名的文件，且用記事本打開輸入你購買的域名</p>
+<p>例如我寫入: lazyman.life</p>
+<p>*有些教程會讓你在Github倉庫中建立這個CNAME，但每次你deploy博客內容後CNAME其實就會被覆蓋刪除，結果就變成你的域名不會應用在倉庫上。</p>
+<p>而在本地source下建立的話，每次deploy上去都會把CNAME這個文件同步到倉庫中。</p>
+<p>到這裡就算完成博客的建立了，接下來的文章記錄博客的主題設置以及插件。</p>
+<p>Reference:</p>
+<ol>
+<li><p>[超详细Hexo+Github博客搭建小白教程] </p>
+<p><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a></p>
+</li>
+<li><p>[How do I link my domain to GitHub Pages] </p>
+<p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages</a></p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>技術</category>
+        <category>學習記錄</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
