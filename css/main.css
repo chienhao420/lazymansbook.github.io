@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffa8d6;
+  background: #70d936;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1596,10 +1596,10 @@ pre .javascript .function {
   border-bottom: 1px solid #fc6423;
 }
 * {
-  cursor: url("https://github.com/chienhao420/test.io/raw/master/rrr.gif"), auto !important;
+  cursor: url("https://lazyman.life/images/covers/rrr.png"), auto !important;
 }
 :active {
-  cursor: url("https://github.com/chienhao420/test.io/raw/master/click.gif"), auto !important;
+  cursor: url("https://lazyman.life/images/covers/click.png"), auto !important;
 }
 .post {
   margin-top: 0px;
