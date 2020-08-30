@@ -477,7 +477,7 @@ Sorry，頁面還在偷懶。
   <script data-pjax>
     (function() {
       var db = firebase.firestore();
-      var articles = db.collection('lazymanbook');
+      var articles = db.collection('articles');
 
       if (CONFIG.page.isPost) { // Is article page
         var title = document.querySelector('.post-title').innerText.trim();
