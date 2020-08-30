@@ -482,8 +482,8 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
   <script>
     firebase.initializeApp({
-      apiKey   : 'AIzaSyCfgEiArBn5RO3HCkW4LXm_pSzV30GCjEI',
-      projectId: 'lazyman-9e642'
+      apiKey   : 'AIzaSyAKqyOshKr8HrID93PIRvFSfA46P937oGQ',
+      projectId: 'lazymanbook'
     });
 
     function getCount(doc, increaseCount) {
@@ -521,7 +521,7 @@
   <script data-pjax>
     (function() {
       var db = firebase.firestore();
-      var articles = db.collection('Lazyman');
+      var articles = db.collection('lazymanbook');
 
       if (CONFIG.page.isPost) { // Is article page
         var title = document.querySelector('.post-title').innerText.trim();
