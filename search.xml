@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一篇文章</title>
-    <url>/2020/08/22/test/</url>
-    <content><![CDATA[<p>#YOLO</p>
-]]></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
-      <tags>
-        <tag>測試</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo &amp; Gitpage搭建記錄 【長】</title>
     <url>/2020/08/26/hexo-gitpage-setup-memo/</url>
     <content><![CDATA[<p><img src="/2020/08/26/hexo-gitpage-setup-memo/cover.png"></p>
@@ -92,7 +80,7 @@
 <p>進入D:\lazy文件夾後，在該文件夾內右鍵點擊<code>Git Bash Here</code> 這樣就會在這個路徑打開Git工具了.這麼做的意義是因為要將Hexo裝在這個文件夾</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/node0.png"></p>
 <p>在Git工具中輸入以下Code:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <p>等他安裝完成後再輸入<code>hexo -v</code> 進行驗證是否安裝成功</p>
 <h3 id="網站初始化"><a href="#網站初始化" class="headerlink" title="網站初始化"></a>網站初始化</h3><ol>
@@ -138,7 +126,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#x6c;&#x61;&#122;&#x79;&#109;&#97;&#x6e;&#x40;&#x6c;&#105;&#x66;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x61;&#122;&#x79;&#109;&#97;&#x6e;&#x40;&#x6c;&#105;&#x66;&#101;&#x2e;&#x63;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#108;&#97;&#122;&#121;&#109;&#x61;&#x6e;&#x40;&#x6c;&#x69;&#102;&#101;&#x2e;&#99;&#111;&#x6d;">&#108;&#97;&#122;&#121;&#109;&#x61;&#x6e;&#x40;&#x6c;&#x69;&#102;&#101;&#x2e;&#99;&#111;&#x6d;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -146,7 +134,7 @@
 
 <p>將出現的內容複製到Github建立SSH的框中，再進行保存。</p>
 <p>接著Git base中輸入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>出現這個則表示成功了.</p>
 <p>若出現Warning: Permanently added the RSA host key for IP address…….的信息的話直接Enter繼續</p>
@@ -163,13 +151,13 @@
 <p>例如：lazymansbook.github.io/main.css</p>
 <p>實際上css的路徑應該是<code>lazymansbook.github.io/css/main.css</code></p>
 <p>這邊回到<code>_config.yml</code>找到<code># URL</code>修改url以及root。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;chienhao420.github.io&#x2F;</span><br><span class="line">root: &#x2F;lazymansbook.github.io&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://chienhao420.github.io/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/lazymansbook.github.io/</span></span><br></pre></td></tr></table></figure>
 
 <p>url填寫的是你的域名，root則是倉庫名稱，這邊出現進入localhost預覽的時候路徑會變成：<a href="http://localhost:4000/lazymansbook.github.io/">http://localhost:4000/lazymansbook.github.io/</a></p>
 <p>但若是將root改成<code>/</code>的話，localhost就會單單變成<a href="http://localhost:4000/">http://localhost:4000/</a></p>
 <p>這裡應該就能明白url和root的意義了。</p>
 <p>後來買的域名後就改成為:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;lazyman.life&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://lazyman.life/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>總結：</p>
 <p>一般教學可能會寫到deploy而已，這裡只是設置能正確讓文件上傳到倉庫，而路徑是要在URL裡面進行設置的。測試了好一會的出來的結果，若有人能協助解釋清幫忙。</p>
@@ -222,14 +210,500 @@
 <p>*有些教程會讓你在Github倉庫中建立這個CNAME，但每次你deploy博客內容後CNAME其實就會被覆蓋刪除，結果就變成你的域名不會應用在倉庫上。</p>
 <p>而在本地source下建立的話，每次deploy上去都會把CNAME這個文件同步到倉庫中。</p>
 <p>到這裡就算完成博客的建立了，接下來的文章記錄博客的主題設置以及插件。</p>
+<hr>
 <p>Reference:</p>
 <ol>
-<li><p>[超详细Hexo+Github博客搭建小白教程] </p>
-<p><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a></p>
+<li><p><a href="https://zhuanlan.zhihu.com/p/35668237">超详细Hexo+Github博客搭建小白教程</a></p>
 </li>
-<li><p>[How do I link my domain to GitHub Pages] </p>
-<p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages</a></p>
+<li><p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">How do I link my domain to GitHub Pages</a></p>
 </li>
+</ol>
+]]></content>
+      <categories>
+        <category>學習記錄</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Gitpage</tag>
+        <tag>Blog</tag>
+        <tag>搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇文章</title>
+    <url>/2020/08/22/test/</url>
+    <content><![CDATA[<p>#YOLO</p>
+]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>測試</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2020/08/30/ce-shi/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Hexo主題/插件設置記錄</title>
+    <url>/2020/08/30/config-hexo/</url>
+    <content><![CDATA[<img src="/2020/08/30/config-hexo/confighexo.png" width="50%" height="50%">
+
+<h1 id="【目錄結構】"><a href="#【目錄結構】" class="headerlink" title="【目錄結構】"></a>【目錄結構】</h1><p>要先講解一下目錄結構，這個稍微有點重要不然要修改什麼文件會影響哪一塊都不知道。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├─.deploy_git</span><br><span class="line">├─node_modules</span><br><span class="line">├─public</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│ └─_posts</span><br><span class="line">└─themes</span><br><span class="line">    ├─landscape</span><br><span class="line">    └─next</span><br></pre></td></tr></table></figure>
+
+<p>下面列出幾個重要常用到的</p>
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>設置Hexo博客的設置文件，建立起博客後會自動生成。</p>
+<p><a href="https://hexo.io/zh-cn/docs/configuration.html">配置信息</a></p>
+<h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h2><p>Hexo的插件都會安裝在這裡</p>
+<h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>執行<code>hexo g</code>後會將source和用到的theme生成的網頁文件放在這個文件夾；用<code>hexo d</code>後會複製到<code>.deploy_git</code>中。</p>
+<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><p>各種模板的文件夾，新建文章的時候會來這裡套用相應的模板</p>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p>存放用戶各種資料的地方</p>
+<h3 id="post"><a href="#post" class="headerlink" title="_post"></a>_post</h3><p>這裡就是存放文章的地方。<code>hexo new post 文章標題</code>就會生成md文件在這個文件夾</p>
+<h3 id="其他非-開頭的文件-文件夾"><a href="#其他非-開頭的文件-文件夾" class="headerlink" title="其他非_開頭的文件/文件夾"></a>其他非_開頭的文件/文件夾</h3><p>會被複製到public目錄上傳到倉庫</p>
+<ul>
+<li>可以創建<code>images</code>目錄來當做圖片索引</li>
+</ul>
+<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><p>默認只會有<code>landscape</code>主題。這邊用到<code>Next</code>主題，每個主題都會有<code>_config.yml</code>配置文件。</p>
+<h2 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h2><p>主題的模板文件，研究一下看怎麼修改footer。</p>
+<h2 id="source-1"><a href="#source-1" class="headerlink" title="source"></a>source</h2><p>存放CSS/圖片資源/庫/腳本的地方</p>
+<hr>
+<h1 id="【安裝主題】"><a href="#【安裝主題】" class="headerlink" title="【安裝主題】"></a>【安裝主題】</h1><p>在博客根目錄執行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>這時候就會出現Next主題在theme文件夾內了</p>
+<p>修改博客配置文件（ _config.yml）的主題為 Next：</p>
+<p><code>theme: next</code></p>
+<p>重啟博客即可看見效果</p>
+<h2 id="配置Next主題"><a href="#配置Next主題" class="headerlink" title="配置Next主題"></a>配置Next主題</h2><p>因為用的是Next主題，所以記錄Next主題的配置。若是其他主題可能大同小異，具體還是要看使用主題的說明手冊.</p>
+<p>打開主題的配置文件（ _config.yml），找到<code>scheme: Pisces</code></p>
+<p>修改到喜歡的主題樣式，這裡選擇了大部分人都選的<code>Pisces</code></p>
+<p>修改地方較多，看官可查看左邊的ToC(Table of Content)查看需要的部分即可</p>
+<hr>
+<h3 id="修改favicon"><a href="#修改favicon" class="headerlink" title="修改favicon"></a>修改favicon</h3><p>修改圖片<code>themes/next/source/images</code></p>
+<p>或者不修改圖片，新增圖片到目錄後修改配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#修改成相應路徑即可</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/safari-pinned-tab.svg</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="修改Avatar"><a href="#修改Avatar" class="headerlink" title="修改Avatar"></a>修改Avatar</h3><p>Avatar路徑：<code>themes/next/source/images/avatar.png</code></p>
+<p>配置文件:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="comment">#自己看說明各項的功能true/false</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># In theme directory (source/images): /images/avatar.gif</span></span><br><span class="line">  <span class="comment"># In site directory (source/uploads): /uploads/avatar.gif</span></span><br><span class="line">  <span class="comment"># You can also use other linking images.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.png</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="修改code顯示配色"><a href="#修改code顯示配色" class="headerlink" title="修改code顯示配色"></a>修改code顯示配色</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">bright</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="回到網頁最上"><a href="#回到網頁最上" class="headerlink" title="回到網頁最上"></a>回到網頁最上</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="閱讀進度"><a href="#閱讀進度" class="headerlink" title="閱讀進度"></a>閱讀進度</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#222&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">2px</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="閱讀書籤"><a href="#閱讀書籤" class="headerlink" title="閱讀書籤"></a>閱讀書籤</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bookmark:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Customize the color of the bookmark.</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#222&quot;</span></span><br><span class="line">  <span class="comment"># If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span></span><br><span class="line">  <span class="comment"># If manual, only save it by clicking the bookmark-icon.</span></span><br><span class="line">  <span class="attr">save:</span> <span class="string">auto</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="GitHub引流"><a href="#GitHub引流" class="headerlink" title="GitHub引流"></a>GitHub引流</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/chienhao420/lazymanbook.github.io</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Lazyman</span> <span class="string">GitHub</span></span><br></pre></td></tr></table></figure>
+
+<p>效果就是右上角會出現Follow me on GitHub的小折角，點擊可引導去GitHub</p>
+<hr>
+<h3 id="開啟評論"><a href="#開啟評論" class="headerlink" title="開啟評論"></a>開啟評論</h3><p>靜態博客是沒有連接數據庫的，但是有插件可以實現評論功能。Next主題就默認有支持各種評論插件，這邊選擇了gitalk，因為可以直接在issue中當討論區。</p>
+<ol>
+<li><p>註冊gitalk的 <a href="https://github.com/settings/applications/new">OAuth Application</a>，隨意填寫即可，網站填寫自己的就行。</p>
+</li>
+<li><p>拿到<code>Client ID</code>和<code>Client Secret</code></p>
+</li>
+<li><p>配置文件選擇要使用評論插件為gitalk</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">gitalk</span></span><br></pre></td></tr></table></figure>
+
+<p>4.找到gitalk的配置進行啟用：</p>
+<p>修改成自己的信息以及上面獲取的2組ID</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># Demo: https://gitalk.github.io</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">chienhao420</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">lazymansbook.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">id</span>&#125; <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">secret</span>&#125; <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">germey</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/08/30/config-hexo/gitalk.png"></p>
+</li>
+</ol>
+<hr>
+<h3 id="無刷新加載"><a href="#無刷新加載" class="headerlink" title="無刷新加載"></a>無刷新加載</h3><p>pjax插件是建議開啟，例如網頁上有個音樂播放器在播放，開了這個進入其他頁面的話並不會停止播放音樂，除非真的點擊網頁刷新。</p>
+<ol>
+<li>開啟pjax功能</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>安裝pjax依賴庫：</p>
+<div class="note warning">
+            <p><strong>注意:</strong> 依賴庫要安裝在主題內</p>
+          </div>
+
+<p>所以先cd進到主題根目錄，再來clone依賴庫下來</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-pjax <span class="built_in">source</span>/lib/pjax</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="閱讀時間-字數統計"><a href="#閱讀時間-字數統計" class="headerlink" title="閱讀時間/字數統計"></a>閱讀時間/字數統計</h3><p>很多教程其實都是舊的了，還叫你使用<code>hexo-wordcount</code>。但仔細看配置文件內就有一個<code>hexo-symbols-count-time</code></p>
+<ol start="0">
+<li>若你安裝了hexo-wordcount，先卸載這個插件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-wordcount</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>接著安裝hexo-symbols-count-time的依賴庫：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>新增配置信息至Hexo配置文件</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">    <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">total_time:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>啟用Next主題中的hexo-symbols-count-time</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span></span><br></pre></td></tr></table></figure>
+
+<p><code>awl</code>和<code>wpm</code>解釋：</p>
+<p><a href="https://github.com/theme-next/hexo-symbols-count-time">插件倉庫</a></p>
+<p><img src="/2020/08/30/config-hexo/wordcount.png"></p>
+</li>
+</ol>
+<hr>
+<h3 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h3><p><code>hexo-generator-searchdb</code>這個插件可以進行全站搜索，先安裝<strong>Hexo插件</strong></p>
+<div class="note info">
+            <p><strong>插件是Hexo用的，應該cd回博客根目錄</strong></p>
+          </div>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>博客配置新增插件配置信息：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<p>修改主題配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/wzpan/hexo-generator-search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>當然也是支持其他的搜索插件，其他自行谷歌百度bing</p>
+<hr>
+<h3 id="文章內插入圖片"><a href="#文章內插入圖片" class="headerlink" title="文章內插入圖片"></a>文章內插入圖片</h3><ol>
+<li>npm安裝插件<code>hexo-asset-image</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --sa</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>編輯hexo配置文件：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><em>開啟這個後，之後<code>hexo new post 文章標題</code>後都會出現相應文章標題的文件夾，文件夾就是用來放置圖片。 例如 hexo new “test”,_posts就會出現test.md以及test文件夾</em></p>
+<ol start="3">
+<li><p>文章內插入圖片就可以使用Markdown語法插入圖片</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![這裡可以不填寫](你的圖片名稱.png)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ol>
+<div class="note danger">
+            <p><strong>注意：<code>npm install hexo-asset-image --save</code>已經失效.</strong></p>
+          </div>
+
+<p>由于hexo3版本后对很多插件支持有问题，<a href="https://github.com/CodeFalling/hexo-asset-image.git">hexo-asset-image</a>插件在处理<code>data.permalink</code>链接时出现路径错误，把年月去掉了，导致最后生成的路径为<code>%d/xxx/xxx</code>需要对其做兼容处理。通过判断当前版本是否等于<code>3</code>的版本做不同的路径分割。</p>
+<p>在代码中加入：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">&#x27;.&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>date.permalink</code>处理：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> link = data.permalink;  </span><br><span class="line"><span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>) </span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">1</span>) + <span class="number">1</span>; </span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>重新生成静态文件即可正确显示。</p>
+<p>所以這裡我也是使用的<code>npm install https://github.com/7ym0n/hexo-asset-image --sa</code></p>
+<hr>
+<h3 id="新增文章邊框陰影"><a href="#新增文章邊框陰影" class="headerlink" title="新增文章邊框陰影"></a>新增文章邊框陰影</h3><p>目錄文件：<code>themes\next\source\css\_common\components\post\post.styl</code></p>
+<p>新增代碼：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">203</span>, .<span class="number">5</span>);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">204</span>, .<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="修改鼠標指針"><a href="#修改鼠標指針" class="headerlink" title="修改鼠標指針"></a>修改鼠標指針</h3><p>找到要的鼠標指針,<code>png</code>和<code>jpg</code>測試可以，ani這種動畫就沒辦法，我是下載到了ani然後用AniFX導出其中一張圖來上傳到另外的倉庫進行引用。</p>
+<p>每個主題的修改位置都不一樣</p>
+<p>我修改的路徑<code>themes\next\source\css\_common\components\post\post.styl</code></p>
+<div class="note info">
+            <p>嘗試使用動態的gif或者ani，但是Chrome/Firefox瀏覽器不支援（貌似因為有漏洞），所以還是只能靜態。cur也是屬於靜態鼠標文件格式。只有IE才支援ANI鼠標指針。 </p>
+          </div>
+
+<p>新增代碼：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 鼠标样式</span><br><span class="line">  * &#123;</span><br><span class="line">      cursor: url(&quot;https:&#x2F;&#x2F;github.com&#x2F;chienhao420&#x2F;test.io&#x2F;raw&#x2F;master&#x2F;rrr.gif&quot;),auto!important</span><br><span class="line">  &#125;</span><br><span class="line">  :active &#123;</span><br><span class="line">      cursor: url(&quot;https:&#x2F;&#x2F;github.com&#x2F;chienhao420&#x2F;test.io&#x2F;raw&#x2F;master&#x2F;click.gif&quot;),auto!important</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="修改分割線樣式"><a href="#修改分割線樣式" class="headerlink" title="修改分割線樣式"></a>修改分割線樣式</h3><p>目錄文件：<code>themes\next\source\css\_common\components\post\post-expand.styl</code></p>
+<p>新增代碼：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> &#123;</span><br><span class="line">  .post-eof &#123;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span>;</span><br><span class="line">  //  margin: $post-eof-margin-top auto $post-eof-margin-bottom;  </span><br><span class="line">    width: 0%; //分割线长度</span><br><span class="line">    height: 0px; // 分割线高度</span><br><span class="line">    background: $grey-light;</span><br><span class="line">    <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="新增標籤頁"><a href="#新增標籤頁" class="headerlink" title="新增標籤頁"></a>新增標籤頁</h3><ol>
+<li>使用page的模板新建立tags標籤頁：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p><code> source/tags/index.md</code>目錄會生成一個index.md</p>
+<ol start="2">
+<li>打開index.md新增type來指定頁面的類型</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-08-30 01:00:53</span><br><span class="line">type: tags</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>打開主題配置文件找到<code>menu: </code>來新增這個tags到側邊欄</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="新增分類頁"><a href="#新增分類頁" class="headerlink" title="新增分類頁"></a>新增分類頁</h3><p>與上面一樣</p>
+<ol>
+<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-08-30 01:00:53</span><br><span class="line">type: categories</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h3 id="修改側邊欄圖標"><a href="#修改側邊欄圖標" class="headerlink" title="修改側邊欄圖標"></a>修改側邊欄圖標</h3><p>圖標都是來自<a href="https://fontawesome.com/">Font Awesome</a></p>
+<p>找到喜歡的圖標後（Pro要錢）找到相應的名稱：</p>
+<p><img src="/2020/08/30/config-hexo/icon.png"></p>
+<p>主題配置找到<code>menu: </code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-cat</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<div class="note success">
+            <p>*這裡修改了側邊欄主頁的圖標</p>
+          </div>
+
+<p><img src="/2020/08/30/config-hexo/icon2.png"></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Enable / Disable menu icons / item badges.</span></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>badges開啟可以顯示側邊欄中各項多少文章</p>
+<hr>
+<h3 id="新增404頁面"><a href="#新增404頁面" class="headerlink" title="新增404頁面"></a>新增404頁面</h3><p>在根目錄的source中新建一個<code>404.md</code>即可，內容如下</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404 Found Being Lazy</span><br><span class="line">date: 2020-08-22 10:47:27</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span></span><br><span class="line">Sorry，頁面還在偷懶。</span><br><span class="line">先點擊--&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://lazyman.life&gt;</span></span></span>&quot;&gt;這裡<span class="xml"><span class="tag"><span class="string">&lt;/a&gt;</span></span></span>返回首页逛逛。</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">&quot;blockquote-center&quot;</span>&gt;</span></span></span><br><span class="line"><span class="code">    能坐就坐，能躺就躺，能多懶就多懶。</span></span><br><span class="line"><span class="code">    --- LazyMan 2020</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">&lt;/blockquote&gt;</span></span><br><span class="line"><span class="code">&lt;blockquote class=&quot;blockquote-center&quot;&gt;</span></span><br><span class="line"><span class="code">    _(:3 」∠ )_</span></span><br><span class="line"><span class="code">&lt;/blockquote&gt;</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="快速配置腳本"><a href="#快速配置腳本" class="headerlink" title="快速配置腳本"></a>快速配置腳本</h3><p>每次要的deploy都要打3個腳本:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p> 一個更快的方法：</p>
+<p>在根目錄建立一個<code>sh.sh</code>的文件，內容如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>這樣以後要發佈的時候直接輸入<code>sh</code>命令來運行<code>sh.sh</code>文件:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sh sh.sh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="新建文章模板"><a href="#新建文章模板" class="headerlink" title="新建文章模板"></a>新建文章模板</h3><p>每次新建文章都要新增很多Front Matter標籤，默認也只有2項：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-------------------------</span><br><span class="line">title: R-18</span><br><span class="line">date: 2020-08-30 14:26:18</span><br><span class="line">-------------------------</span><br></pre></td></tr></table></figure>
+
+<p>為了節省時間，這邊可以修改默認的模板。根據上面提到的目錄結構，可以在根目錄找到<code>scaffolds\post.md</code>模板。</p>
+<p>打開進行相應的編輯：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">top: false</span><br><span class="line">cover: false</span><br><span class="line">toc: true</span><br><span class="line">mathjax: true</span><br><span class="line">description: </span><br><span class="line">tags: </span><br><span class="line">categories: </span><br><span class="line">summary_img: </span><br><span class="line">comments: </span><br></pre></td></tr></table></figure>
+
+<p>這樣每次新建文章就都會帶有這些Front Matter</p>
+<div class="note success">
+            <p>Comments是因為加了Gitalk，部分不想要開放留言，於是false即可。</p>
+          </div>
+
+<hr>
+<h3 id="首頁文章設置-“閱讀更多”"><a href="#首頁文章設置-“閱讀更多”" class="headerlink" title="首頁文章設置 “閱讀更多”"></a>首頁文章設置 “閱讀更多”</h3><p>這邊有3種做法可以讓首頁的文章進行折疊</p>
+<ol>
+<li>限制首頁文章最多能顯示的字數</li>
+<li>Front Matter中添加description</li>
+<li>文章中添加readmore代碼</li>
+</ol>
+<p>1: 在主題配置文件中添加下方代碼</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+
+<p>未來生成的所有文章都會自動截取前150個字符作為description。</p>
+<p>2: 在文章的Front Matter中添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">description: 這是一篇很長的文章</span><br></pre></td></tr></table></figure>
+
+<p>在首頁上顯示的則優先使用description中的內容</p>
+<p>3: 文章中添加<code>&lt; !--more--&gt;</code>，自己決定要從哪裡開始折疊。用這個的好處在於可以自己靈活控制折疊的位置</p>
+<hr>
+<h3 id="首頁文章添加封面圖"><a href="#首頁文章添加封面圖" class="headerlink" title="首頁文章添加封面圖"></a>首頁文章添加封面圖</h3><p>除了在文章內有封面圖之外，想在首頁文章閱讀更多上面顯示圖片的話，首先找到<code>\themes\next\layout\_macro\post.swing</code></p>
+<p>仔細閱讀以下能找到Header/Body/End of Body三個區塊，可以試著在三個區塊各自添加看看如下代碼，結果會在不同地方顯示圖片：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if post.summary_img  %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;out-img-topic&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&#123;&#123; post.summary_img &#125;&#125; class&#x3D;&quot;img-topic&quot;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/08/30/config-hexo/post.png"></p>
+<p>我就添加在POST BODY中了，接下來就可以在Front Matter中添加<code>summary_img: </code></p>
+<p>本文章Front Matter如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hexo主題&#x2F;插件設置記錄</span><br><span class="line">top: false</span><br><span class="line">cover: true</span><br><span class="line">toc: true</span><br><span class="line">mathjax: true</span><br><span class="line">date: 2020-08-30 11:15:00</span><br><span class="line">description: 搭建完Hexo博客，後續的主題&#x2F;插件設置記錄；文章很長其實都是複製文件中的配置信息.真正要修改的也就是true&#x2F;false...最多就在兩三行安裝插件</span><br><span class="line">tags: </span><br><span class="line">- Hexo</span><br><span class="line">- Gitpage</span><br><span class="line">- Blog</span><br><span class="line">- 搭建博客</span><br><span class="line">categories: 學習記錄</span><br><span class="line">summary_img: &#x2F;images&#x2F;covers&#x2F;confighexo.png</span><br></pre></td></tr></table></figure>
+
+<p><span>我的封面圖片放在主題的<code>source</code>新增了一個covers文件夾進行存放。這應該不是一個好的存放位置,但是有達到目的<img src="https://static-cdn.jtvnw.net/emoticons/v1/1902/1.0" alt="Kappa"></span></p>
+<hr>
+<h3 id="添加GA（Google-Analytics"><a href="#添加GA（Google-Analytics" class="headerlink" title="添加GA（Google Analytics)"></a>添加GA（Google Analytics)</h3><p>主題配置文件下找到<code># Google Analytics</code>, 將你的GA ID填入<code>tracking_id:</code>即可</p>
+<hr>
+<h3 id="閱讀進度-1"><a href="#閱讀進度-1" class="headerlink" title="閱讀進度"></a>閱讀進度</h3><p>主題配置文件設置為true</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="建立中文文章鏈接"><a href="#建立中文文章鏈接" class="headerlink" title="建立中文文章鏈接"></a>建立中文文章鏈接</h3><p>若你的文章標題在建立的時候使用的中文，是沒什麼問題，但是不利於SEO。安裝這個插件可以將你的中文文章生成拼音鏈接。</p>
+<ol>
+<li>安裝插件</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm i hexo-permalink-pinyin --save</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Hexo配置文件添加如下：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink_pinyin:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否开启</span></span><br><span class="line">  <span class="attr">separator:</span> <span class="string">&#x27;-&#x27;</span>   <span class="comment"># default: &#x27;-&#x27;链接符</span></span><br></pre></td></tr></table></figure>
+
+<p>結果：</p>
+<p><img src="/2020/08/30/config-hexo/ceshi.png"></p>
+<p><img src="/2020/08/30/config-hexo/ceshi1.png"></p>
+<hr>
+<h2 id="【花裡花俏的設置】"><a href="#【花裡花俏的設置】" class="headerlink" title="【花裡花俏的設置】"></a>【花裡花俏的設置】</h2><h3 id="添加彩色文字特效"><a href="#添加彩色文字特效" class="headerlink" title="添加彩色文字特效"></a>添加彩色文字特效</h3><p>HTML代碼：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;binft&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var binft &#x3D; function (r) &#123;</span><br><span class="line">      function t() &#123;</span><br><span class="line">        return b[Math.floor(Math.random() * b.length)]</span><br><span class="line">      &#125;  </span><br><span class="line">      function e() &#123;</span><br><span class="line">        return String.fromCharCode(94 * Math.random() + 33)</span><br><span class="line">      &#125;</span><br><span class="line">      function n(r) &#123;</span><br><span class="line">        for (var n &#x3D; document.createDocumentFragment(), i &#x3D; 0; r &gt; i; i++) &#123;</span><br><span class="line">          var l &#x3D; document.createElement(&quot;span&quot;);</span><br><span class="line">          l.textContent &#x3D; e(), l.style.color &#x3D; t(), n.appendChild(l)</span><br><span class="line">        &#125;</span><br><span class="line">        return n</span><br><span class="line">      &#125;</span><br><span class="line">      function i() &#123;</span><br><span class="line">        var t &#x3D; o[c.skillI];</span><br><span class="line">        c.step ? c.step-- : (c.step &#x3D; g, c.prefixP &lt; l.length ? (c.prefixP &gt;&#x3D; 0 &amp;&amp; (c.text +&#x3D; l[c.prefixP]), c.prefixP++) : &quot;forward&quot; &#x3D;&#x3D;&#x3D; c.direction ? c.skillP &lt; t.length ? (c.text +&#x3D; t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction &#x3D; &quot;backward&quot;, c.delay &#x3D; a) : c.skillP &gt; 0 ? (c.text &#x3D; c.text.slice(0, -1), c.skillP--) : (c.skillI &#x3D; (c.skillI + 1) % o.length, c.direction &#x3D; &quot;forward&quot;)), r.textContent &#x3D; c.text, r.appendChild(n(c.prefixP &lt; l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)</span><br><span class="line">      &#125;</span><br><span class="line">      var l &#x3D; &quot;&quot;,</span><br><span class="line">      o &#x3D; [&quot;青青陵上柏，磊磊涧中石。&quot;, &quot;人生天地间，忽如远行客。&quot;,&quot;斗酒相娱乐，聊厚不为薄。&quot;, &quot;驱车策驽马，游戏宛与洛。&quot;,&quot;洛中何郁郁，冠带自相索。&quot;,&quot;长衢罗夹巷，王侯多第宅。&quot;,&quot;两宫遥相望，双阙百余尺。&quot;,&quot;极宴娱心意，戚戚何所迫？&quot;].map(function (r) &#123;</span><br><span class="line">      return r + &quot;&quot;</span><br><span class="line">      &#125;),</span><br><span class="line">      a &#x3D; 2,</span><br><span class="line">      g &#x3D; 1,</span><br><span class="line">      s &#x3D; 5,</span><br><span class="line">      d &#x3D; 75,</span><br><span class="line">      b &#x3D; [&quot;rgb(110,64,170)&quot;, &quot;rgb(150,61,179)&quot;, &quot;rgb(191,60,175)&quot;, &quot;rgb(228,65,157)&quot;, &quot;rgb(254,75,131)&quot;, &quot;rgb(255,94,99)&quot;, &quot;rgb(255,120,71)&quot;, &quot;rgb(251,150,51)&quot;, &quot;rgb(226,183,47)&quot;, &quot;rgb(198,214,60)&quot;, &quot;rgb(175,240,91)&quot;, &quot;rgb(127,246,88)&quot;, &quot;rgb(82,246,103)&quot;, &quot;rgb(48,239,130)&quot;, &quot;rgb(29,223,163)&quot;, &quot;rgb(26,199,194)&quot;, &quot;rgb(35,171,216)&quot;, &quot;rgb(54,140,225)&quot;, &quot;rgb(76,110,219)&quot;, &quot;rgb(96,84,200)&quot;],</span><br><span class="line">      c &#x3D; &#123;</span><br><span class="line">        text: &quot;&quot;,</span><br><span class="line">        prefixP: -s,</span><br><span class="line">        skillI: 0,</span><br><span class="line">        skillP: 0,</span><br><span class="line">        direction: &quot;forward&quot;,</span><br><span class="line">        delay: a,</span><br><span class="line">        step: g</span><br><span class="line">      &#125;;</span><br><span class="line">      i()</span><br><span class="line">      &#125;;</span><br><span class="line">      binft(document.getElementById(&#39;binft&#39;));</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>想了一下應該是由主題來完成這個的，所以就跑去主題文件夾內尋找。最後在<code>partials\header</code>這裡找到<code>brand.swig</code></p>
+<p><img src="/2020/08/30/config-hexo/brand.png"></p>
+<p>發現site-meta和網頁上標籤符合，然後下面又是logo和description的，果斷加入在<code>&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</code>下面, 刷新頁面完成效果。</p>
+<hr>
+<h3 id="修改文章底部的-標籤"><a href="#修改文章底部的-標籤" class="headerlink" title="修改文章底部的#標籤"></a>修改文章底部的#標籤</h3><p>文件路徑<code>themes\next\source\css\_common\components\post\post.styl</code></p>
+<p>找到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;%- set tag_indicate &#x3D; &#39;#&#39; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>將<code>#</code>改成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>，當然class的內容也是Font Awesome可以改的圖標</p>
+<hr>
+<h3 id="修改超鏈接的顏色"><a href="#修改超鏈接的顏色" class="headerlink" title="修改超鏈接的顏色"></a>修改超鏈接的顏色</h3><p>文件路徑<code>themes\next\source\css\_common\components\post\post.styl</code></p>
+<p>添加下方代碼：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #6bf0fa;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這邊再給超鏈接加上陰影效果</p>
+<p>本來套用了文章陰影的效果，套上一個方格，但是不是很好看於是改用文字陰影</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">-moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br></pre></td></tr></table></figure>
+
+<p>上面這個不好看改用下面這個 <i class="fas fa-pencil-alt"></i></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #6bf0fa;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  text-shadow: 1px 1px 3px #94f7f7;&#x2F;*添加字体文字的阴影*&#x2F;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>CSS我不熟，附上參考：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-shadow: 2px 4px 6px #000;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/RedWolfChao/article/details/79271295">HTML CSS添加阴影</a></p>
+<p><a href="https://m.html.cn/qa/css3/13471.html">css怎么给字体加阴影？</a></p>
+<hr>
+<h3 id="修改Footer"><a href="#修改Footer" class="headerlink" title="修改Footer"></a>修改Footer</h3><p>在主題配置中<code>powered: true </code>才會顯示頁腳</p>
+<p>找到<code>D:\lazyman\themes\next\layout\_partials\footer.swig</code> 修改如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.footer.powered %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;powered-by&quot;&gt;</span><br><span class="line">    &#123;%- set next_site &#x3D; &#39;https:&#x2F;&#x2F;lazyman.life&#39; %&#125;</span><br><span class="line">    &#123;%- if theme.scheme !&#x3D;&#x3D; &#39;Gemini&#39; %&#125;</span><br><span class="line">      &#123;%- set next_site &#x3D; &#39;https:&#x2F;&#x2F;&#39; + theme.scheme | lower + &#39;.theme-next.org&#39; %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">    &#123;&#123;- __(&#39;footer.powered&#39;, next_url(&#39;https:&#x2F;&#x2F;lazyman.life&#39;, &#39;啾啾&#39;, &#123;class: &#39;theme-link&#39;&#125;) + &#39; &amp; &#39; + next_url(&#39;https:lazyman.life&#39;, &#39;糖糖&#39;)) &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="文章內使用Font-Awesome圖標"><a href="#文章內使用Font-Awesome圖標" class="headerlink" title="文章內使用Font Awesome圖標"></a>文章內使用Font Awesome圖標</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;&lt;i class&#x3D;&quot;fas fa-pencil-alt&quot;&gt;&lt;&#x2F;i&gt;&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重點在於<code>&lt;i class=&quot;fas fa-pencil-alt&quot;&gt;&lt;/i&gt;</code>， 需要<code>raw</code>和<code>endraw</code>是因為Markdown中的html要用這兩個標籤包起來，下面會說說明。</p>
+<hr>
+<h3 id="自定义一个不使用主题模板渲染的独立页面"><a href="#自定义一个不使用主题模板渲染的独立页面" class="headerlink" title="自定义一个不使用主题模板渲染的独立页面"></a>自定义一个不使用主题模板渲染的独立页面</h3><p>例如要在about me的頁面中不使用主題模板，則在about me生成的index.md中加入<code>layout: false</code>.</p>
+<p>此md中的HTML代碼要用<code>`和`</code>包起來</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br><span class="line">&#123;% raw %&#125;</span><br><span class="line">xxxxxxxxxxxxx</span><br><span class="line">xx HTML代码 xx</span><br><span class="line">xxxxxxxxxxxxx</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note info">
+            <p>後面更新: 貌似不需要raw標籤也能自動識別HTML了，自己試試看吧。</p>
+          </div>
+
+<hr>
+<h3 id="添加字串掉落背景"><a href="#添加字串掉落背景" class="headerlink" title="添加字串掉落背景"></a>添加字串掉落背景</h3><p>這裡使用了一個新的頁面來操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page aboutme</span><br></pre></td></tr></table></figure>
+
+<p>在<code>aboutme.md</code>中添加不使用主題layout<code>layout: false</code></p>
+<p>輸入以下代碼</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">    canvas &#123;</span><br><span class="line">      position: fixed;</span><br><span class="line">      right: 0px;</span><br><span class="line">      bottom: 0px;</span><br><span class="line">     min-width: 100%;</span><br><span class="line">      min-height: 100%;</span><br><span class="line">      height: auto;</span><br><span class="line">      width: auto;</span><br><span class="line">      z-index: -1;</span><br><span class="line">&#125;  &lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;canvas id&#x3D;&quot;canvas&quot; width&#x3D;&quot;1440&quot; height&#x3D;&quot;900&quot; &gt;&lt;&#x2F;canvas&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;js&#x2F;DigitalRain.js&quot; charset&#x3D;&quot;UTF-8&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>把aboutme.md當做html文件在寫，這裡添加了CSS以及引用字串掉落的JavaScript文件</p>
+<div class="note warning">
+            <p>原本是英文的，後來我改成中文的就會變成亂碼，所以要在引用JS文件的時候編碼設置<code>charset=&quot;UTF-8&quot;</code>(若還是亂碼可以試試看別的編碼)</p>
+          </div>
+
+
+
+<p>繼續建立JavaScript文件：</p>
+<p>找到目錄<code>themes\next\source\js</code>新建<code>DigitalRain.js</code>，複製下面內容並保存:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//获取画布对象</span></span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&quot;canvas&quot;</span>);</span><br><span class="line">    <span class="comment">//获取画布的上下文</span></span><br><span class="line">    <span class="keyword">var</span> context =canvas.getContext(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">window</span>.screen;</span><br><span class="line">    <span class="keyword">var</span> W = canvas.width = s.width;</span><br><span class="line">    <span class="keyword">var</span> H = canvas.height;</span><br><span class="line">    <span class="comment">//获取浏览器屏幕的宽度和高度</span></span><br><span class="line">    <span class="comment">//var W = window.innerWidth;</span></span><br><span class="line">    <span class="comment">//var H = window.innerHeight;</span></span><br><span class="line">    <span class="comment">//设置canvas的宽度和高度</span></span><br><span class="line">    canvas.width = W;</span><br><span class="line">    canvas.height = H;</span><br><span class="line">    <span class="comment">//每个文字的字体大小</span></span><br><span class="line">    <span class="keyword">var</span> fontSize = <span class="number">15</span>;</span><br><span class="line">    <span class="comment">//计算列</span></span><br><span class="line">    <span class="keyword">var</span> colunms = <span class="built_in">Math</span>.floor(W /fontSize);    </span><br><span class="line">    <span class="comment">//记录每列文字的y轴坐标</span></span><br><span class="line">    <span class="keyword">var</span> drops = [];</span><br><span class="line">    <span class="comment">//给每一个文字初始化一个起始点的位置</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;colunms;i++)&#123;</span><br><span class="line">        drops.push(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//运动的文字</span></span><br><span class="line">    <span class="keyword">var</span> str =<span class="string">&quot;人生苦短，能偷懶就偷懶，懶無極限！&quot;</span>;<span class="comment">//使用中文的話要去引用JS的地方加上charset=&quot;UTF-8&quot;</span></span><br><span class="line">    <span class="comment">//4:fillText(str,x,y);原理就是去更改y的坐标位置</span></span><br><span class="line">    <span class="comment">//绘画的函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        context.fillStyle = <span class="string">&quot;rgba(238,238,238,.08)&quot;</span>;<span class="comment">//遮盖层</span></span><br><span class="line">        context.fillRect(<span class="number">0</span>,<span class="number">0</span>,W,H);</span><br><span class="line">        <span class="comment">//给字体设置样式</span></span><br><span class="line">        context.font = <span class="string">&quot;600 &quot;</span>+fontSize+<span class="string">&quot;px  Georgia&quot;</span>;</span><br><span class="line">        <span class="comment">//给字体添加颜色</span></span><br><span class="line">        context.fillStyle = [<span class="string">&quot;#33B5E5&quot;</span>, <span class="string">&quot;#0099CC&quot;</span>, <span class="string">&quot;#AA66CC&quot;</span>, <span class="string">&quot;#9933CC&quot;</span>, <span class="string">&quot;#99CC00&quot;</span>, <span class="string">&quot;#669900&quot;</span>, <span class="string">&quot;#FFBB33&quot;</span>, <span class="string">&quot;#FF8800&quot;</span>, <span class="string">&quot;#FF4444&quot;</span>, <span class="string">&quot;#CC0000&quot;</span>][<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">10</span>)];<span class="comment">//randColor();可以rgb,hsl, 标准色，十六进制颜色</span></span><br><span class="line">        <span class="comment">//写入画布中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;colunms;i++)&#123;</span><br><span class="line">            <span class="keyword">var</span> index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * str.length);</span><br><span class="line">            <span class="keyword">var</span> x = i*fontSize;</span><br><span class="line">            <span class="keyword">var</span> y = drops[i] *fontSize;</span><br><span class="line">            context.fillText(str[index],x,y);</span><br><span class="line">            <span class="comment">//如果要改变时间，肯定就是改变每次他的起点</span></span><br><span class="line">            <span class="keyword">if</span>(y &gt;= canvas.height &amp;&amp; <span class="built_in">Math</span>.random() &gt; <span class="number">0.99</span>)&#123;</span><br><span class="line">                drops[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            drops[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">randColor</span>(<span class="params"></span>)</span>&#123;<span class="comment">//随机颜色</span></span><br><span class="line">        <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;rgb(&quot;</span>+r+<span class="string">&quot;,&quot;</span>+g+<span class="string">&quot;,&quot;</span>+b+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    draw();</span><br><span class="line">    <span class="built_in">setInterval</span>(draw,<span class="number">65</span>);<span class="comment">//落下速度</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>打開<code>http://localhost:4000/aboutme/</code>即可看見效果</p>
+<p><a href="http://www.lxl8800.cn/Main/Resource">代码来源</a></p>
+<hr>
+<h3 id="文章底部添加‘文章結束’標記"><a href="#文章底部添加‘文章結束’標記" class="headerlink" title="文章底部添加‘文章結束’標記"></a>文章底部添加‘文章結束’標記</h3><p>文件目錄 <code>themes/next/layout/_macro/</code> ，新增文件 <code>passage-end-tag.swig</code> ，複製下面內容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &lt;div style&#x3D;&quot;text-align:center;color: #ccc;font-size:14px;&quot;&gt;------------ 終於讀完了! 快保存網頁已被不時之需 ------------&lt;&#x2F;div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打開<code>themes/next/layout/_macro/post.swig</code>文件</p>
+<p>我在<code>END POST BODY</code>中找了何時地方放下如下代碼：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">        &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include &#39;passage-end-tag.swig&#39; %&#125;</span><br><span class="line">        &#123;% endif %&#125;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打開主題配置文件新增如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 文章末尾添加“本文结束”标记</span><br><span class="line">passage_end_tag:</span><br><span class="line">enabled: true</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="添加音樂播放器"><a href="#添加音樂播放器" class="headerlink" title="添加音樂播放器"></a>添加音樂播放器</h3><hr>
+<p>本來選擇了Spotify ，但在沒有客戶端的情況只能試聽30秒…太爛了吧。馬上換成SoundCloud，我想放在側邊欄於是找到</p>
+<p><code>themes\next\layout\_partials\sidebar</code></p>
+<p>一個個區塊測試後決定放在計算標籤數量下方。找到<code>&#123;%- if theme.site_state %&#125;</code>的結束區塊，然後在下面放下embed的播放器代碼即可完成。</p>
+<div class="note info">
+            <p>因為有用pjax，所以頁面刷新的時候都不會中斷播放，除非硬刷新(F5) </p>
+          </div>
+
+<hr>
+<h3 id="設置語言"><a href="#設置語言" class="headerlink" title="設置語言"></a>設置語言</h3><p>在Hexo配置中<code>site</code>的language默認是英文，這裡改為<code>zh-TW</code>。</p>
+<div class="note warning">
+            <p><strong>若我這邊打的繁體，但是選擇zh-CN就會出現亂碼</strong>  </p>
+          </div>
+
+<div class="note info">
+            <p>若用了<code>hexo new page R - 18</code>，若不在語言文件中添加<code>R- 18</code>則側邊欄會顯示<code>R - 18</code>。 若在語言文件中添加了<code> R-18: 愛情動作</code>，就會顯示為<code>愛情動作</code></p>
+          </div>
+
+<hr>
+<h1 id="【Note標籤】"><a href="#【Note標籤】" class="headerlink" title="【Note標籤】"></a>【Note標籤】</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] [no-icon] %&#125; 要寫在標籤內的內容 &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>[class]</code>有以下幾種,選擇更換 : default | primary | success | info | warning | danger.</p>
+<p>舉例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;  **default**  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;  **primary**  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;  **success**  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;  **info**  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;  **warning**  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;  **danger**  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note default">
+            <p><strong>default</strong>  </p>
+          </div>
+
+<div class="note primary">
+            <p><strong>primary</strong>  </p>
+          </div>
+
+<div class="note success">
+            <p><strong>success</strong>  </p>
+          </div>
+
+<div class="note info">
+            <p><strong>info</strong>  </p>
+          </div>
+
+<div class="note warning">
+            <p><strong>warning</strong>  </p>
+          </div>
+
+<div class="note danger">
+            <p><strong>danger</strong>  </p>
+          </div>
+
+
+
+<h1 id="【Reference】"><a href="#【Reference】" class="headerlink" title="【Reference】"></a>【Reference】</h1><ol>
+<li><a href="https://cuiqingcai.com/7625.html">利用 GitHub + Hexo + Next 从零搭建一个博客</a></li>
+<li><a href="https://www.jianshu.com/p/efbeddc5eb19">Hexo+Next个人博客主题优化</a></li>
+<li><a href="https://www.jianshu.com/p/3db6a61d3782">hexo使用markdown图片无法显示问题</a></li>
+<li><a href="https://itrhx.blog.csdn.net/article/details/90320295">獨立不渲染頁面</a></li>
 </ol>
 ]]></content>
       <categories>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"lazyman.life","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"lazyman.life","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="第一篇文章記錄此網站的搭建過程，以及遇到的大坑。">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/index.html">
 <meta property="og:site_name" content="LazyMan&#39;s Book">
 <meta property="og:description" content="第一篇文章記錄此網站的搭建過程，以及遇到的大坑。">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/cover.png">
 <meta property="og:image" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/git1.png">
 <meta property="og:image" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/git2.png">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/domain.png">
 <meta property="og:image" content="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/domain1.png">
 <meta property="article:published_time" content="2020-08-26T14:09:51.000Z">
-<meta property="article:modified_time" content="2020-08-29T16:39:05.385Z">
+<meta property="article:modified_time" content="2020-08-30T05:20:45.736Z">
 <meta property="article:author" content="Lazy Justin">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Gitpage">
@@ -58,12 +58,21 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-TW'
   };
 </script>
 
   <title>Hexo & Gitpage搭建記錄 【長】 | LazyMan's Book</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125347369-2"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125347369-2');
+      }
+    </script>
 
 
 
@@ -102,7 +111,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切換導航欄">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -115,6 +124,48 @@
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">LazyMan's Book</h1>
       <span class="logo-line-after"><i></i></span>
+      <div id="binft"></div>
+<script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["食行記錄，為了未來再吃。", "折騰記錄，下次能輕鬆點。", "休息是為了走更長的路", "能坐就坐，能躺就躺", "花最少的時間，完成更多的事", "人生短暫，沒空吃苦", "天天吃苦，我吃糖糖"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
     </a>
       <p class="site-subtitle" itemprop="description">懶男隨手筆記</p>
   </div>
@@ -133,16 +184,36 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fas fa-bed fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-r-18">
+
+    <a href="/R-18/" rel="section"><i class="fas fa-cat fa-fw"></i>愛情動作</a>
+
+  </li>
+        <li class="menu-item menu-item-在線視頻">
+
+    <a href="http://joysgo.com/" rel="noopener" target="_blank"><i class="fas fa-film fa-fw"></i>在線視頻</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
       </li>
   </ul>
@@ -158,7 +229,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -193,7 +264,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://lazyman.life/2020/08/26/hexo-gitpage-setup-memo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,41 +285,48 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2020-08-26 22:09:51" itemprop="dateCreated datePublished" datetime="2020-08-26T22:09:51+08:00">2020-08-26</time>
+              <time title="創建時間：2020-08-26 22:09:51" itemprop="dateCreated datePublished" datetime="2020-08-26T22:09:51+08:00">2020-08-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-30 00:39:05" itemprop="dateModified" datetime="2020-08-30T00:39:05+08:00">2020-08-30</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-08-30 13:20:45" itemprop="dateModified" datetime="2020-08-30T13:20:45+08:00">2020-08-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%B8%E7%BF%92%E8%A8%98%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">學習記錄</span></a>
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="文章字數">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.6k</span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>4.3k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>4 分鐘</span>
             </span>
             <div class="post-description">第一篇文章記錄此網站的搭建過程，以及遇到的大坑。</div>
 
@@ -338,7 +416,7 @@
 <p>進入D:\lazy文件夾後，在該文件夾內右鍵點擊<code>Git Bash Here</code> 這樣就會在這個路徑打開Git工具了.這麼做的意義是因為要將Hexo裝在這個文件夾</p>
 <p><img src="/2020/08/26/hexo-gitpage-setup-memo/node0.png"></p>
 <p>在Git工具中輸入以下Code:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <p>等他安裝完成後再輸入<code>hexo -v</code> 進行驗證是否安裝成功</p>
 <h3 id="網站初始化"><a href="#網站初始化" class="headerlink" title="網站初始化"></a>網站初始化</h3><ol>
@@ -384,7 +462,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#x6c;&#x61;&#122;&#x79;&#109;&#97;&#x6e;&#x40;&#x6c;&#105;&#x66;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x61;&#122;&#x79;&#109;&#97;&#x6e;&#x40;&#x6c;&#105;&#x66;&#101;&#x2e;&#x63;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#108;&#97;&#122;&#121;&#109;&#x61;&#x6e;&#x40;&#x6c;&#x69;&#102;&#101;&#x2e;&#99;&#111;&#x6d;">&#108;&#97;&#122;&#121;&#109;&#x61;&#x6e;&#x40;&#x6c;&#x69;&#102;&#101;&#x2e;&#99;&#111;&#x6d;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -392,7 +470,7 @@
 
 <p>將出現的內容複製到Github建立SSH的框中，再進行保存。</p>
 <p>接著Git base中輸入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>出現這個則表示成功了.</p>
 <p>若出現Warning: Permanently added the RSA host key for IP address…….的信息的話直接Enter繼續</p>
@@ -409,13 +487,13 @@
 <p>例如：lazymansbook.github.io/main.css</p>
 <p>實際上css的路徑應該是<code>lazymansbook.github.io/css/main.css</code></p>
 <p>這邊回到<code>_config.yml</code>找到<code># URL</code>修改url以及root。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;chienhao420.github.io&#x2F;</span><br><span class="line">root: &#x2F;lazymansbook.github.io&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://chienhao420.github.io/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/lazymansbook.github.io/</span></span><br></pre></td></tr></table></figure>
 
 <p>url填寫的是你的域名，root則是倉庫名稱，這邊出現進入localhost預覽的時候路徑會變成：<a target="_blank" rel="noopener" href="http://localhost:4000/lazymansbook.github.io/">http://localhost:4000/lazymansbook.github.io/</a></p>
 <p>但若是將root改成<code>/</code>的話，localhost就會單單變成<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
 <p>這裡應該就能明白url和root的意義了。</p>
 <p>後來買的域名後就改成為:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;lazyman.life&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://lazyman.life/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>總結：</p>
 <p>一般教學可能會寫到deploy而已，這裡只是設置能正確讓文件上傳到倉庫，而路徑是要在URL裡面進行設置的。測試了好一會的出來的結果，若有人能協助解釋清幫忙。</p>
@@ -468,13 +546,12 @@
 <p>*有些教程會讓你在Github倉庫中建立這個CNAME，但每次你deploy博客內容後CNAME其實就會被覆蓋刪除，結果就變成你的域名不會應用在倉庫上。</p>
 <p>而在本地source下建立的話，每次deploy上去都會把CNAME這個文件同步到倉庫中。</p>
 <p>到這裡就算完成博客的建立了，接下來的文章記錄博客的主題設置以及插件。</p>
+<hr>
 <p>Reference:</p>
 <ol>
-<li><p>[超详细Hexo+Github博客搭建小白教程] </p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">超详细Hexo+Github博客搭建小白教程</a></p>
 </li>
-<li><p>[How do I link my domain to GitHub Pages] </p>
-<p><a target="_blank" rel="noopener" href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">How do I link my domain to GitHub Pages</a></p>
 </li>
 </ol>
 
@@ -483,17 +560,25 @@
     
     
     
+    <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------------ 終於讀完了! 快保存網頁已被不時之需 ------------</div>
+    
+</div>
+        
+    </div>
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/Gitpage/" rel="tag"># Gitpage</a>
-              <a href="/tags/Blog/" rel="tag"># Blog</a>
-              <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># 搭建博客</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Gitpage/" rel="tag"><i class="fa fa-tag"></i> Gitpage</a>
+              <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
+              <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 搭建博客</a>
           </div>
 
         
-
 
         
     <div class="post-nav">
@@ -501,7 +586,10 @@
     <a href="/2020/08/22/test/" rel="prev" title="第一篇文章">
       <i class="fa fa-chevron-left"></i> 第一篇文章
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/30/config-hexo/" rel="next" title="Hexo主題/插件設置記錄">
+      Hexo主題/插件設置記錄 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -514,6 +602,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -551,10 +640,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目錄
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          本站概要
         </li>
       </ul>
 
@@ -576,21 +665,27 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
+
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1063466833&color=%233c90db&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>
+<div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://lazyman.life" title="啾啾" target="_blank" style="color: #cccccc; text-decoration: none;">啾啾</a> · <a href="https://lazyman.life" title="My LOVER's kind &lt;3" target="_blank" style="color: #cccccc; text-decoration: none;">My LOVER's kind &lt;3</a></div>
+
 </div>
 
 
@@ -622,19 +717,19 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Lazy Justin</span>
+  <span class="author" itemprop="copyrightHolder">懒人</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">5k</span>
+    <span title="總字數">23k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4 mins.</span>
+    <span title="所需總閱讀時間">21 分鐘</span>
 </div>
-  <div class="powered-by">Generated by <a href="https://lazyman.life/" class="theme-link">啾啾</a> & <a href="https://lazyman.life/" rel="noopener" target="_blank">糖糖</a>
+  <div class="powered-by">由 <a href="https://lazyman.life/" class="theme-link">啾啾</a> & <a href="https://lazyman.life/" rel="noopener" target="_blank">糖糖</a> 生成愛的結晶
   </div>
 
         
@@ -642,6 +737,77 @@
 
 
 
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey   : 'AIzaSyCfgEiArBn5RO3HCkW4LXm_pSzV30GCjEI',
+      projectId: 'lazyman-9e642'
+    });
+
+    function getCount(doc, increaseCount) {
+      // IncreaseCount will be false when not in article page
+      return doc.get().then(d => {
+        var count = 0;
+        if (!d.exists) { // Has no data, initialize count
+          if (increaseCount) {
+            doc.set({
+              count: 1
+            });
+            count = 1;
+          }
+        } else { // Has data
+          count = d.data().count;
+          if (increaseCount) {
+            // If first view this article
+            doc.set({ // Increase count
+              count: count + 1
+            });
+            count++;
+          }
+        }
+
+        return count;
+      });
+    }
+
+    function appendCountTo(el) {
+      return count => {
+        el.innerText = count;
+      }
+    }
+  </script>
+  <script data-pjax>
+    (function() {
+      var db = firebase.firestore();
+      var articles = db.collection('Lazyman');
+
+      if (CONFIG.page.isPost) { // Is article page
+        var title = document.querySelector('.post-title').innerText.trim();
+        var doc = articles.doc(title);
+        var increaseCount = CONFIG.hostname === location.hostname;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
+      } else if (CONFIG.page.isHome) { // Is index page
+        var promises = [...document.querySelectorAll('.post-title')].map(element => {
+          var title = element.innerText.trim();
+          var doc = articles.doc(title);
+          return getCount(doc);
+        });
+        Promise.all(promises).then(counts => {
+          var metas = document.querySelectorAll('.firestore-visitors-count');
+          counts.forEach((val, idx) => {
+            appendCountTo(metas[idx])(val);
+          });
+        });
+      }
+    })();
+  </script>
 
 
 
@@ -754,6 +920,26 @@ window.addEventListener('pjax:success', () => {
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b9aea53fab8dddd97abb',
+      clientSecret: 'b6225dc294e5d40babe8659a187c2e2b7300c7b6',
+      repo        : 'lazymansbook.github.io',
+      owner       : 'chienhao420',
+      admin       : ['懒人420'],
+      id          : '5586aafe981220f02fb42d1799baff94',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
