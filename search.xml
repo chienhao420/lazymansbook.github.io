@@ -126,7 +126,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#x6c;&#97;&#x7a;&#121;&#x6d;&#x61;&#110;&#64;&#x6c;&#x69;&#102;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#97;&#x7a;&#121;&#x6d;&#x61;&#110;&#64;&#x6c;&#x69;&#102;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#108;&#x61;&#x7a;&#x79;&#x6d;&#97;&#110;&#x40;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#x6f;&#109;">&#108;&#x61;&#x7a;&#x79;&#x6d;&#97;&#110;&#x40;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -680,6 +680,16 @@
           </div>
 
 <hr>
+<h3 id="修改側邊欄badge顏色"><a href="#修改側邊欄badge顏色" class="headerlink" title="修改側邊欄badge顏色"></a>修改側邊欄badge顏色</h3><p>找到<code>themes\next\source\css\_schemes\Pisces\_menu.styl</code></p>
+<p>修改<code>color</code>代碼顏色部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.badge</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: $grey-light;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: black;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">text-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> <span class="number">0</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">1</span>);</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改側邊欄頂部顏色以及圓角"><a href="#修改側邊欄頂部顏色以及圓角" class="headerlink" title="修改側邊欄頂部顏色以及圓角"></a>修改側邊欄頂部顏色以及圓角</h3><p>找到<code>themes\next\source\css\_schemes\Pisces\_header.styl</code></p>
+<p>修改<code>background</code>代碼顏色部分並且新增<code>border-radius:30px;</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.site-brand-container &#123;</span><br><span class="line">  background: $black-deep;</span><br><span class="line">  border-radius:30px;</span><br><span class="line"></span><br><span class="line">  +tablet-mobile() &#123;</span><br><span class="line">    box-shadow: 0 0 16px rgba(0, 0, 0, .5);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="【Note標籤】"><a href="#【Note標籤】" class="headerlink" title="【Note標籤】"></a>【Note標籤】</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] [no-icon] %&#125; 要寫在標籤內的內容 &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>[class]</code>有以下幾種,選擇更換 : default | primary | success | info | warning | danger.</p>

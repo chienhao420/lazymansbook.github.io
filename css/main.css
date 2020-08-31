@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2f32a3;
+  background: #f0c2ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1583,30 +1583,6 @@ pre .javascript .function {
   line-height: 1;
   margin: -20px auto 15px;
   text-align: center;
-}
-.post-body p a {
-  color: #6bf0fa;
-  border-bottom: none;
-  border-bottom: 1px solid #0593d3;
-  text-shadow: 1px 1px 3px #94f7f7; /*添加字体文字的阴影*/
-}
-.post-body p a:hover {
-  color: #fc6423;
-  border-bottom: none;
-  border-bottom: 1px solid #fc6423;
-}
-* {
-  cursor: url("https://lazyman.life/images/covers/rrr.png"), auto !important;
-}
-:active {
-  cursor: url("https://lazyman.life/images/covers/click.png"), auto !important;
-}
-.post {
-  margin-top: 0px;
-  margin-bottom: 60px;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .post-sticky-flag {
   display: inline-block;
@@ -2418,7 +2394,8 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .site-brand-container {
-  background: #222;
+  background: #fdb353;
+  border-radius: 30px;
 }
 @media (max-width: 991px) {
   .site-brand-container {
@@ -2426,7 +2403,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .site-meta {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .brand {
   padding: 0;
@@ -2482,7 +2459,7 @@ ul.breadcrumb li + li:last-child {
 .menu .menu-item .badge {
   background: #ccc;
   border-radius: 10px;
-  color: #fff;
+  color: #000;
   float: right;
   padding: 2px 5px;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
@@ -2623,4 +2600,170 @@ ul.breadcrumb li + li:last-child {
 }
 .back-to-top.back-to-top-on {
   margin-top: 16px;
+}
+/***********************************************************/
+/************************ Header **************************/
+/***********************************************************/
+/* header-隐藏顶部线条 */
+.headband {
+  display: none;
+}
+/* header-顶部空白 */
+.header {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .header {
+    margin-top: 0;
+  }
+}
+.popup {
+  opacity: 0.9;
+}
+/* header-顶部圆角 */
+.header-inner {
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px 3px #fd5e53;
+  background: rgba(221,221,221,0.8);
+/* 这里不能用opacity,否则搜索栏没法点击。opacity 这个属性设置的是整个界面控件的不透明度，所以会导致弹窗的绘制在后，使得弹窗被覆盖在了博客显示界面的底下 */
+}
+@media (max-width: 767px) {
+  .header-inner {
+    border-radius: 0 0 $myradius $myradius;
+  }
+}
+/***********************************************************/
+/************************ Sidebar **************************/
+/***********************************************************/
+.site-author-name,
+.site-state-item-count,
+.site-state-item-name {
+  font-weight: bold;
+  font-family: $font-family-quote;
+  color: var(--brand-color);
+  text-shadow: 1px 1px 3px #fd539d;
+}
+/*左侧长方形背景*/
+.sidebar-inner {
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 1px 1px 3px 3px #fd5e53;
+}
+/* sidebar-标题背景 */
+.site-brand-container {
+  background: url("https://source.unsplash.com/random/1600x900");
+  background-position: 70% 20%;
+  background-size: cover;
+  text-shadow: 1px 1px 3px #000;
+}
+/* sidebar-标题 */
+.site-subtitle {
+  font-weight: bold;
+}
+/* sidebar-副标题 */
+.site-subtitle {
+  font-weight: bold;
+  font-family: $font-family-quote;
+  color: var(--brand-color);
+  text-shadow: 1px 1px 3px #fd539d;
+}
+/* sidebar-站点描述介绍 */
+.site-description {
+  color: var(--blockquote-color);
+  text-shadow: 1px 1px 3px #ff0;
+  box-shadow: 1px 1px 3px 3px #fd5e53;
+  background: #fff;
+  opacity: 0.9;
+}
+/* sidebar-圆角 */
+.sub-menu {
+  border-radius: 10px;
+}
+/* sidebar-侧边背景 */
+.sidebar {
+  background: transparent;
+}
+/* post-图片阴影 */
+.posts-expand .post-body img {
+  box-shadow: 1px 1px 3px 3px #fd5e53;
+}
+/* post-文章标题 */
+.posts-expand .post-title {
+  font-size: 1.35em;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #fd539d;
+}
+@media (max-width: 767px) {
+  .posts-expand .post-title {
+    margin-top: 10px;
+  }
+}
+/***********************************************************/
+/************************ post    **************************/
+/***********************************************************/
+/* post-正文字号 */
+.post-body {
+  font-size: 1em;
+  text-shadow: 1px 1px 3px #a38381;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.post-body p a {
+  color: #6bf0fa;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+  text-shadow: 1px 1px 3px #94f7f7; /*添加字体文字的阴影*/
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+}
+/* button-back2top */
+.back-to-top {
+  background: #fff;
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 1em;
+}
+/***********************************************************/
+/************************ Footer  **************************/
+/***********************************************************/
+/* footer */
+.footer,
+.footer a {
+  color: #008080;
+  text-shadow: 0px 1px 1px #ffa500; /*添加字体文字的阴影*/
+}
+/***********************************************************/
+/************************ Overall **************************/
+/***********************************************************/
+.post {
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+* {
+  cursor: url("https://lazyman.life/images/covers/rrr.png"), auto !important;
+}
+:active {
+  cursor: url("https://lazyman.life/images/covers/click.png"), auto !important;
+}
+/* 背景图片 */
+/* background:url(https://source.unsplash.com/random/1600x900); */
+body {
+  background: url("/images/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
