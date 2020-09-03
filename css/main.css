@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f0c2ff;
+  background: #911ff1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2626,6 +2626,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: 1px 1px 3px 3px #fd5e53;
   background: rgba(221,221,221,0.8);
 /* 这里不能用opacity,否则搜索栏没法点击。opacity 这个属性设置的是整个界面控件的不透明度，所以会导致弹窗的绘制在后，使得弹窗被覆盖在了博客显示界面的底下 */
+/* 资料来源：https://liushulun.cn/post/blogdiy/data-blogdiy-5-search/blogdiy-5-search/ */
 }
 @media (max-width: 767px) {
   .header-inner {
@@ -2760,7 +2761,7 @@ ul.breadcrumb li + li:last-child {
   cursor: url("https://lazyman.life/images/covers/click.png"), auto !important;
 }
 /* 背景图片 */
-/* background:url(https://source.unsplash.com/random/1600x900); */
+/* 这个是随机图片background:url(https://source.unsplash.com/random/1600x900); */
 body {
   background: url("/images/bg.png");
   background-repeat: no-repeat;

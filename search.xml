@@ -126,7 +126,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#108;&#x61;&#x7a;&#x79;&#x6d;&#97;&#110;&#x40;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#x6f;&#109;">&#108;&#x61;&#x7a;&#x79;&#x6d;&#97;&#110;&#x40;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#108;&#97;&#x7a;&#121;&#109;&#x61;&#110;&#x40;&#x6c;&#105;&#x66;&#x65;&#x2e;&#99;&#x6f;&#109;">&#108;&#97;&#x7a;&#121;&#109;&#x61;&#110;&#x40;&#x6c;&#105;&#x66;&#x65;&#x2e;&#99;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -230,6 +230,11 @@
       </tags>
   </entry>
   <entry>
+    <title>测试</title>
+    <url>/2020/08/30/ce-shi/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>第一篇文章</title>
     <url>/2020/08/22/test/</url>
     <content><![CDATA[<p>#YOLO</p>
@@ -243,11 +248,6 @@
       <tags>
         <tag>測試</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2020/08/30/ce-shi/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Hexo主題 &amp; 插件設置記錄</title>
@@ -580,7 +580,35 @@
 <p><img src="/2020/08/30/config-hexo/ceshi.png"></p>
 <p><img src="/2020/08/30/config-hexo/ceshi1.png"></p>
 <hr>
-<h2 id="【花裡花俏的設置】"><a href="#【花裡花俏的設置】" class="headerlink" title="【花裡花俏的設置】"></a>【花裡花俏的設置】</h2><h3 id="添加彩色文字特效"><a href="#添加彩色文字特效" class="headerlink" title="添加彩色文字特效"></a>添加彩色文字特效</h3><p>HTML代碼：</p>
+<h2 id="【花裡花俏的設置】"><a href="#【花裡花俏的設置】" class="headerlink" title="【花裡花俏的設置】"></a>【花裡花俏的設置】</h2><h3 id="關於部分花裡花俏的CSS設置："><a href="#關於部分花裡花俏的CSS設置：" class="headerlink" title="關於部分花裡花俏的CSS設置："></a>關於部分花裡花俏的CSS設置：</h3><p>下面的教程都是主題默認的文件進行修改，然後網上的教程都是讓你找到一個<code>custom.styl</code>的文件。新版的Next主題已經沒有這個文件了，但是在主題設置中有這麼一行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory &#96;source&#x2F;_data&#96; and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source&#x2F;_data&#x2F;head.swig</span><br><span class="line">  #header: source&#x2F;_data&#x2F;header.swig</span><br><span class="line">  #sidebar: source&#x2F;_data&#x2F;sidebar.swig</span><br><span class="line">  #postMeta: source&#x2F;_data&#x2F;post-meta.swig</span><br><span class="line">  #postBodyEnd: source&#x2F;_data&#x2F;post-body-end.swig</span><br><span class="line">  #footer: source&#x2F;_data&#x2F;footer.swig</span><br><span class="line">  #bodyEnd: source&#x2F;_data&#x2F;body-end.swig</span><br><span class="line">  #variable: source&#x2F;_data&#x2F;variables.styl</span><br><span class="line">  #mixin: source&#x2F;_data&#x2F;mixins.styl</span><br><span class="line">  style: source&#x2F;_data&#x2F;styles.styl</span><br></pre></td></tr></table></figure>
+
+<p>後面我所有的CSS都將其塞入到<strong>hexo根目錄</strong>下的source文件夾，再根據上方路徑建立文件。</p>
+<p>後來發現其實CSS也蠻簡單的。可以先用Chrome Dev Tool找到那部分的class在哪兒，接著在styles文件內做相應的新增CSS即可。</p>
+<p>例如找到側邊欄的名稱<code>sidebar</code>，在styles裡面添加如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* sidebar-侧边背景 *&#x2F;</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  background: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>即可完成。網上可以搜索其他相關CSS的生成方法。</p>
+<p>例如找到如何字體陰影：</p>
+<p>找到這個：<a href="https://www.w3school.com.cn/cssref/pr_text-shadow.asp">https://www.w3school.com.cn/cssref/pr_text-shadow.asp</a></p>
+<p>基础的文本阴影效果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">h1</span><br><span class="line">&#123;</span><br><span class="line">text-shadow: 5px 5px 5px #FF0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面也有提供測試，自己稍微改一下然後添加到側邊欄的屬性下即可：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* sidebar-侧边背景 *&#x2F;</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  background: transparent;</span><br><span class="line">  text-shadow: 5px 5px 5px #FF0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<div class="note warning">
+            <p><strong>下面記錄的都是沒有寫進styles文件內的，不推薦！但記錄下來比較是個學習過程，我也是寫到最後面才發現的。</strong>  </p>
+          </div>
+
+<p>*記錄一個坑：<code>.header-inner</code>設置透明後，搜索的功能就沒辦法點到了，具體解決在：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* header-顶部圆角 *&#x2F;</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  border-radius: 30px;</span><br><span class="line">  box-shadow: 1px 1px 3px 3px #fd5e53;</span><br><span class="line">  background: #ddddddcc</span><br><span class="line">  &#x2F;* 这里不能用opacity，改用background,否则搜索栏没法点击。opacity 这个属性设置的是整个界面控件的不透明度，所以会导致弹窗的绘制在后，使得弹窗被覆盖在了博客显示界面的底下 *&#x2F;</span><br><span class="line">  &#x2F;* 资料来源：https:&#x2F;&#x2F;liushulun.cn&#x2F;post&#x2F;blogdiy&#x2F;data-blogdiy-5-search&#x2F;blogdiy-5-search&#x2F; *&#x2F;</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    border-radius: 0 0 $myradius $myradius;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="添加彩色文字特效"><a href="#添加彩色文字特效" class="headerlink" title="添加彩色文字特效"></a>添加彩色文字特效</h3><p>HTML代碼：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;binft&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var binft &#x3D; function (r) &#123;</span><br><span class="line">      function t() &#123;</span><br><span class="line">        return b[Math.floor(Math.random() * b.length)]</span><br><span class="line">      &#125;  </span><br><span class="line">      function e() &#123;</span><br><span class="line">        return String.fromCharCode(94 * Math.random() + 33)</span><br><span class="line">      &#125;</span><br><span class="line">      function n(r) &#123;</span><br><span class="line">        for (var n &#x3D; document.createDocumentFragment(), i &#x3D; 0; r &gt; i; i++) &#123;</span><br><span class="line">          var l &#x3D; document.createElement(&quot;span&quot;);</span><br><span class="line">          l.textContent &#x3D; e(), l.style.color &#x3D; t(), n.appendChild(l)</span><br><span class="line">        &#125;</span><br><span class="line">        return n</span><br><span class="line">      &#125;</span><br><span class="line">      function i() &#123;</span><br><span class="line">        var t &#x3D; o[c.skillI];</span><br><span class="line">        c.step ? c.step-- : (c.step &#x3D; g, c.prefixP &lt; l.length ? (c.prefixP &gt;&#x3D; 0 &amp;&amp; (c.text +&#x3D; l[c.prefixP]), c.prefixP++) : &quot;forward&quot; &#x3D;&#x3D;&#x3D; c.direction ? c.skillP &lt; t.length ? (c.text +&#x3D; t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction &#x3D; &quot;backward&quot;, c.delay &#x3D; a) : c.skillP &gt; 0 ? (c.text &#x3D; c.text.slice(0, -1), c.skillP--) : (c.skillI &#x3D; (c.skillI + 1) % o.length, c.direction &#x3D; &quot;forward&quot;)), r.textContent &#x3D; c.text, r.appendChild(n(c.prefixP &lt; l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)</span><br><span class="line">      &#125;</span><br><span class="line">      var l &#x3D; &quot;&quot;,</span><br><span class="line">      o &#x3D; [&quot;青青陵上柏，磊磊涧中石。&quot;, &quot;人生天地间，忽如远行客。&quot;,&quot;斗酒相娱乐，聊厚不为薄。&quot;, &quot;驱车策驽马，游戏宛与洛。&quot;,&quot;洛中何郁郁，冠带自相索。&quot;,&quot;长衢罗夹巷，王侯多第宅。&quot;,&quot;两宫遥相望，双阙百余尺。&quot;,&quot;极宴娱心意，戚戚何所迫？&quot;].map(function (r) &#123;</span><br><span class="line">      return r + &quot;&quot;</span><br><span class="line">      &#125;),</span><br><span class="line">      a &#x3D; 2,</span><br><span class="line">      g &#x3D; 1,</span><br><span class="line">      s &#x3D; 5,</span><br><span class="line">      d &#x3D; 75,</span><br><span class="line">      b &#x3D; [&quot;rgb(110,64,170)&quot;, &quot;rgb(150,61,179)&quot;, &quot;rgb(191,60,175)&quot;, &quot;rgb(228,65,157)&quot;, &quot;rgb(254,75,131)&quot;, &quot;rgb(255,94,99)&quot;, &quot;rgb(255,120,71)&quot;, &quot;rgb(251,150,51)&quot;, &quot;rgb(226,183,47)&quot;, &quot;rgb(198,214,60)&quot;, &quot;rgb(175,240,91)&quot;, &quot;rgb(127,246,88)&quot;, &quot;rgb(82,246,103)&quot;, &quot;rgb(48,239,130)&quot;, &quot;rgb(29,223,163)&quot;, &quot;rgb(26,199,194)&quot;, &quot;rgb(35,171,216)&quot;, &quot;rgb(54,140,225)&quot;, &quot;rgb(76,110,219)&quot;, &quot;rgb(96,84,200)&quot;],</span><br><span class="line">      c &#x3D; &#123;</span><br><span class="line">        text: &quot;&quot;,</span><br><span class="line">        prefixP: -s,</span><br><span class="line">        skillI: 0,</span><br><span class="line">        skillP: 0,</span><br><span class="line">        direction: &quot;forward&quot;,</span><br><span class="line">        delay: a,</span><br><span class="line">        step: g</span><br><span class="line">      &#125;;</span><br><span class="line">      i()</span><br><span class="line">      &#125;;</span><br><span class="line">      binft(document.getElementById(&#39;binft&#39;));</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>想了一下應該是由主題來完成這個的，所以就跑去主題文件夾內尋找。最後在<code>partials\header</code>這裡找到<code>brand.swig</code></p>
