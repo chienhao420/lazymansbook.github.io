@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b1a625;
+  background: #5bff9e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2656,6 +2656,9 @@ ul.breadcrumb li + li:last-child {
 .sidebar-nav .sidebar-nav-active {
   color: #fbe251;
 }
+.sidebar-nav .sidebar-nav-active:hover {
+  color: #fbe251;
+}
 .sidebar-nav li:hover {
   color: #ecb88a;
 }
@@ -2674,7 +2677,7 @@ ul.breadcrumb li + li:last-child {
 }
 /*左侧目录上排第一toc字体hover颜色*/
 .post-toc .nav .active-current > a:hover {
-  color: #78c2c4;
+  color: #fbe251;
   font-weight: bold;
   font-size: 20px;
 }
