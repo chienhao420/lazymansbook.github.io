@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff054f;
+  background: #b1a625;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2647,16 +2647,52 @@ ul.breadcrumb li + li:last-child {
   color: var(--brand-color);
   text-shadow: 1px 1px 3px #fd539d;
 }
+/*左侧目录概要栏位*/
 .sidebar-nav {
   background: #dc9fb4;
   font-weight: bold;
+  text-shadow: 0px 0px 6px #89916b;
 }
+.sidebar-nav .sidebar-nav-active {
+  color: #fbe251;
+}
+.sidebar-nav li:hover {
+  color: #ecb88a;
+}
+/*左侧长方形文字和背景颜色*/
 .post-toc-wrap,
 .sidebar-panel,
 .sidebar-panel-active {
   background-image: linear-gradient(#dc9fb4, #e16b8c, #f17c67);
   font-weight: 300;
   text-shadow: 1px 1px 3px #cb1b45;
+}
+.post-toc-wrap:hover,
+.sidebar-panel:hover,
+.sidebar-panel-active:hover {
+  color: #fbe251;
+}
+/*左侧目录上排第一toc字体hover颜色*/
+.post-toc .nav .active-current > a:hover {
+  color: #78c2c4;
+  font-weight: bold;
+  font-size: 20px;
+}
+/*左侧目录link字体颜色*/
+.post-toc .nav .active-current > a {
+  color: #dbe536;
+}
+/*左侧目录link字体hover颜色*/
+.nav-link:hover {
+  font-weight: bold;
+  font-size: 13px;
+  color: #fbe251;
+}
+.post-toc .nav .nav-child {
+  display: block;
+}
+.post-toc ol {
+  font-size: 13px;
 }
 /*左侧长方形背景*/
 .sidebar-inner {
@@ -2720,6 +2756,9 @@ ul.breadcrumb li + li:last-child {
 .post-body {
   font-size: 1em;
   text-shadow: 1px 1px 3px #a38381;
+}
+.btn:hover {
+  background: #db4d6d;
 }
 .content-wrap {
   opacity: 0.9;

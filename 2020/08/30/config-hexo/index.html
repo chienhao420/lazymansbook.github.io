@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://lazyman.life/2020/08/30/config-hexo/ceshi1.png">
 <meta property="og:image" content="http://lazyman.life/2020/08/30/config-hexo/brand.png">
 <meta property="article:published_time" content="2020-08-30T03:15:00.000Z">
-<meta property="article:modified_time" content="2020-09-03T14:29:37.895Z">
+<meta property="article:modified_time" content="2020-09-04T15:06:01.937Z">
 <meta property="article:author" content="Lazy Justin">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Gitpage">
@@ -287,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-09-03 22:29:37" itemprop="dateModified" datetime="2020-09-03T22:29:37+08:00">2020-09-03</time>
+                <time title="修改時間：2020-09-04 23:06:01" itemprop="dateModified" datetime="2020-09-04T23:06:01+08:00">2020-09-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -663,7 +663,7 @@
 <h2 id="【花裡花俏的設置】"><a href="#【花裡花俏的設置】" class="headerlink" title="【花裡花俏的設置】"></a>【花裡花俏的設置】</h2><h3 id="關於部分花裡花俏的CSS設置："><a href="#關於部分花裡花俏的CSS設置：" class="headerlink" title="關於部分花裡花俏的CSS設置："></a>關於部分花裡花俏的CSS設置：</h3><p>下面的教程都是主題默認的文件進行修改，然後網上的教程都是讓你找到一個<code>custom.styl</code>的文件。新版的Next主題已經沒有這個文件了，但是在主題設置中有這麼一行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory &#96;source&#x2F;_data&#96; and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source&#x2F;_data&#x2F;head.swig</span><br><span class="line">  #header: source&#x2F;_data&#x2F;header.swig</span><br><span class="line">  #sidebar: source&#x2F;_data&#x2F;sidebar.swig</span><br><span class="line">  #postMeta: source&#x2F;_data&#x2F;post-meta.swig</span><br><span class="line">  #postBodyEnd: source&#x2F;_data&#x2F;post-body-end.swig</span><br><span class="line">  #footer: source&#x2F;_data&#x2F;footer.swig</span><br><span class="line">  #bodyEnd: source&#x2F;_data&#x2F;body-end.swig</span><br><span class="line">  #variable: source&#x2F;_data&#x2F;variables.styl</span><br><span class="line">  #mixin: source&#x2F;_data&#x2F;mixins.styl</span><br><span class="line">  style: source&#x2F;_data&#x2F;styles.styl</span><br></pre></td></tr></table></figure>
 
-<p>後面我所有的CSS都將其塞入到<strong>hexo根目錄</strong>下的source文件夾，再根據上方路徑建立文件。</p>
+<p>後面我所有的CSS都將其塞入到<strong>hexo根目錄</strong>下的source文件夾，再根據上方路徑建立文件，主題會優先讀取自定義的樣式。</p>
 <p>後來發現其實CSS也蠻簡單的。可以先用Chrome Dev Tool找到那部分的class在哪兒，接著在styles文件內做相應的新增CSS即可。</p>
 <p>例如找到側邊欄的名稱<code>sidebar</code>，在styles裡面添加如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* sidebar-侧边背景 *&#x2F;</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  background: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
