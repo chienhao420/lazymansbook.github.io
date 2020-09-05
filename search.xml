@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2.4G or 5G Wifi</title>
+    <url>/2020/09/05/2-5g-and-5g-wifi/</url>
+    <content><![CDATA[<p><strong>我們常見的5G WiFi與5G網路並不是同一個概念，只是他們剛好都用到5G這個名詞</strong></p>
+<h2 id="5G-WiFi是什麼"><a href="#5G-WiFi是什麼" class="headerlink" title="5G WiFi是什麼"></a>5G WiFi是什麼</h2><p>嚴格來說，5G WiFi的說法是不嚴謹的，從廣義上理解，我們一般所說的5G WiFi，是使用了5GHz無線頻率電波的WiFi信號，但採用5GHz的WiFi信號早已誕生，現在我們常見的5G WiFi，一般是指採用802.11n、802.11ac以及802.11ax等新協定的無線WiFi信號。</p>
+<h2 id="2-4GHz-WiFi和5GHz-WiFi有什麼區別？"><a href="#2-4GHz-WiFi和5GHz-WiFi有什麼區別？" class="headerlink" title="2.4GHz WiFi和5GHz WiFi有什麼區別？"></a>2.4GHz WiFi和5GHz WiFi有什麼區別？</h2><p>早期的WiFi信號，普遍採用2.4GHz頻段。然而，很多電子裝置普遍都採用了2.4GHz的無線頻率，比如微波爐、藍牙裝置等，它們都會干擾2.4GHz的WiFi，使信號受到一定程度的影響，傳送速率也會因此而減慢。</p>
+<p>使用5GHz的WiFi運行在更高的頻段上，更高的頻段帶來了更少的通道擁堵，因此更高的無線傳輸速率是5GHz最大的特徵。以採用第五代802.11ac協定的WiFi信號為例，80MHz的頻寬下能達到433Mbps的傳送速率，160MHz的頻寬下更能達到866Mbps的傳送速率，相比2.4GHz的傳輸速率有著本質的區別。</p>
+<p>另外，5GHz WiFi的優勢還體現在頻段資源上，2.4GHz互不干擾的頻段資源只有3個，但5GHz下有22個，假設您將這些頻段想像成快車道，那麼5GHz明顯更不容易出現信號擁堵的情況，資料的傳輸也更加的流暢。</p>
+<p>雖然5GHz在傳輸速率方面有著明顯的優勢，然而，5GHz的WiFi也有其不足之處，那就是信號的衍射與反射不如2.4GHz WiFi的信號強。對於2.4GHz和5GHz頻段的電磁波來說，其主要傳播方式是直線傳播，在碰到障礙物時會產生穿透、反射、衍射等多種現象，穿透是主要現象，少部分的信號會發生反射和衍射。</p>
+<p>但因為電磁波信號在穿透障礙物時會損失大量的能量，有時候尚未穿透障礙物，能量就已經消耗殆盡，越是高頻的信號，穿透障礙時所消耗的能量就越多，因此終端接收到的是往往是通過反射和衍射而來信號，也就是繞過了障礙物的信號。</p>
+<p>而WiFi信號的本質就是電磁波，由於2.4GHz的低頻信號下，衍射和反射都比高頻的5GHz信號更優秀，因此2.4GHz的WiFi在穿牆、信號覆蓋方面有更加出色的表現。簡單來說，<strong>2.4GHz的WiFi傳輸距離更遠，信號衰減更少，但傳輸速率較低；5GHz的WiFi傳輸距離較短，信號衰減明顯，但傳輸速率更高。</strong></p>
+<p>在生活中，2.4G是更為常見的WiFi頻段。但是正因為常見，使用的人多，所以，在使用WiFi時會出現眾多WiFi公用一個通道而導致的WiFi信號差的情況。而且，不僅WiFi，很多家用電子設備，如電磁爐等也使用2.4G頻段，所以就會產生干擾而導致傳輸速率變慢。</p>
+<p>但是，2.4G卻比5G更能穿牆。2.4G給人的感覺之所以比5G更能「穿牆」，其實很大可能是因為更強的電磁波的衍射能力。由於電磁波主要傳播方式是直線傳播，在遇到牆壁等障礙物時，會產生穿透、反射以及衍射。但是，2.4G比5G頻率低，電磁波（網絡信號）的衍射能力更強，衰減程度更低。所以「2.4G比5G更能穿牆」這個說法是有問題的，正確的總結應該是「2.4G比5G更能繞牆」。</p>
+<p><strong>因此，如果要安裝路由器的地方空間大，並且有很多障礙物，可以選擇2.4G，而反之，最好使用5G，5G的網速和信號都會明顯優於2.4G。</strong></p>
+<p>Source:</p>
+<p><a href="https://www.reneelab.net/difference-between-5g-and-5g-wifi.html">2.4G/5G WiFi與5G頻道的區別</a></p>
+<p><a href="https://kknews.cc/science/nvgmep5.html">WiFi的2.4G和5G有什麼區別？哪個好用？</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Ebisu Curry &amp; Coffee</title>
+    <url>/2020/09/05/ebisu-curry-coffee/</url>
+    <content><![CDATA[<p>✅Dine-in  ✅Takeaway ✅ Delivery</p>
+<p><strong>餐廳地址：</strong></p>
+<p>No. 78, Ningbo West Street, Zhongzheng District, Taipei City, 100</p>
+<p><strong>需要訂位？</strong></p>
+<p>不需</p>
+<p>📞: 0937 638 027</p>
+<p><strong>路線</strong></p>
+<p>自己谷歌，會路過金峰滷肉飯。</p>
+<p><strong>菜單</strong></p>
+<p><img src="/2020/09/05/ebisu-curry-coffee/menu1.jpg"></p>
+<p><img src="/2020/09/05/ebisu-curry-coffee/menu2.jpg"></p>
+<p><strong>已點</strong></p>
+<p>雞肉咖喱</p>
+<p><strong>感覺</strong></p>
+<p>雞肉好嫩好吃</p>
+<p><img src="/2020/09/05/ebisu-curry-coffee/food.JPG"></p>
+]]></content>
+      <categories>
+        <category>food</category>
+      </categories>
+      <tags>
+        <tag>天天吃美食-順便上個班</tag>
+        <tag>台電大樓</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo &amp; Gitpage搭建記錄 【長】</title>
     <url>/2020/08/26/hexo-gitpage-setup-memo/</url>
     <content><![CDATA[<p><img src="/2020/08/26/hexo-gitpage-setup-memo/cover.png"></p>
@@ -126,7 +173,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#x6c;&#x61;&#x7a;&#x79;&#x6d;&#x61;&#x6e;&#64;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#111;&#109;">&#x6c;&#x61;&#x7a;&#x79;&#x6d;&#x61;&#x6e;&#64;&#x6c;&#105;&#102;&#x65;&#x2e;&#99;&#111;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#x6c;&#x61;&#122;&#121;&#109;&#x61;&#110;&#64;&#x6c;&#105;&#x66;&#x65;&#46;&#99;&#x6f;&#109;">&#x6c;&#x61;&#122;&#121;&#109;&#x61;&#110;&#64;&#x6c;&#105;&#x66;&#x65;&#46;&#99;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -230,40 +277,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2.5g-and-5g-wifi</title>
-    <url>/2020/09/05/2-5g-and-5g-wifi/</url>
-    <content><![CDATA[<p>在生活中，2.4G是更為常見的WiFi頻段。但是正因為常見，使用的人多，所以，在使用WiFi時會出現眾多WiFi公用一個通道而導致的WiFi信號差的情況。而且，不僅WiFi，很多家用電子設備，如電磁爐等也使用2.4G頻段，所以就會產生干擾而導致傳輸速率變慢。</p>
-<p>但是，2.4G卻比5G更能穿牆。2.4G給人的感覺之所以比5G更能「穿牆」，其實很大可能是因為更強的電磁波的衍射能力。由於電磁波主要傳播方式是直線傳播，在遇到牆壁等障礙物時，會產生穿透、反射以及衍射。但是，2.4G比5G頻率低，電磁波（網絡信號）的衍射能力更強，衰減程度更低。所以「2.4G比5G更能穿牆」這個說法是有問題的，正確的總結應該是「2.4G比5G更能繞牆」。</p>
-<p>因此，如果要安裝路由器的地方空間大，並且有很多障礙物，可以選擇2.4G，而反之，最好使用5G，5G的網速和信號都會明顯優於2.4G。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MoM&#39;s Touch師大店</title>
-    <url>/2020/09/05/tai-power-momstouch/</url>
-    <content><![CDATA[<p><strong>餐廳地址：</strong><br>Address: No. 29號, Lane 13, Pucheng Street, Da’an District, Taipei City, 106</p>
-<p>✅Dine-in  ✅Takeaway ✅<a href="%5Bhttps://www.ubereats.com/tw/taipei/food-delivery/moms-touch-%E5%B8%AB%E5%A4%A7%E5%BA%97/CqghXDBxT2qy9QVmQ2UDXQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link%5D(https://www.ubereats.com/tw/taipei/food-delivery/moms-touch-%E5%B8%AB%E5%A4%A7%E5%BA%97/CqghXDBxT2qy9QVmQ2UDXQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link)">Delivery</a></p>
-<p><strong>需要訂位：</strong></p>
-<p>否</p>
-<p>📞:02 2362 0858</p>
-<p><strong>路線</strong></p>
-<p>台電大樓3號出口出去後馬上右轉過馬路，後右轉直走5分鐘路過<code>小木屋鬆餅</code> 看到<code>漢堡王</code>和<code>鐵板燒</code>左轉小路即可看到。</p>
-<p><strong>菜單</strong></p>
-<p><img src="/2020/09/05/tai-power-momstouch/menu.jpg"></p>
-<p><strong>已點</strong></p>
-<p>卜吉撒料起司洋蔥炸雞👍👍</p>
-<p>特調紅醬年糕雞塊👍</p>
-<p><img src="/2020/09/05/tai-power-momstouch/set.JPG"></p>
-<p><img src="/2020/09/05/tai-power-momstouch/ricecake.JPG"></p>
-]]></content>
-      <categories>
-        <category>food</category>
-      </categories>
-      <tags>
-        <tag>天天吃美食-順便上個班</tag>
-        <tag>台電大樓</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第一篇文章</title>
     <url>/2020/08/22/test/</url>
     <content><![CDATA[<p>#YOLO</p>
@@ -276,6 +289,34 @@
       </categories>
       <tags>
         <tag>測試</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台電大樓 - MoM&#39;s Touch師大店</title>
+    <url>/2020/09/05/tai-power-momstouch/</url>
+    <content><![CDATA[<p><strong>餐廳地址：</strong><br>No. 29號, Lane 13, Pucheng Street, Da’an District, Taipei City, 106</p>
+<p>✅Dine-in  ✅Takeaway ✅<a href="%5Bhttps://www.ubereats.com/tw/taipei/food-delivery/moms-touch-%E5%B8%AB%E5%A4%A7%E5%BA%97/CqghXDBxT2qy9QVmQ2UDXQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link%5D(https://www.ubereats.com/tw/taipei/food-delivery/moms-touch-%E5%B8%AB%E5%A4%A7%E5%BA%97/CqghXDBxT2qy9QVmQ2UDXQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link)">Delivery</a></p>
+<p><strong>需要訂位？</strong></p>
+<p>否</p>
+<p>📞:02 2362 0858</p>
+<p><strong>路線</strong></p>
+<p>台電大樓3號出口出去後馬上右轉過馬路，後右轉直走5分鐘路過<code>小木屋鬆餅</code> 看到<code>漢堡王</code>和<code>鐵板燒</code>左轉小路即可看到。</p>
+<p><strong>菜單</strong></p>
+<p><img src="/2020/09/05/tai-power-momstouch/menu.jpg"></p>
+<p><strong>已點</strong></p>
+<p>卜吉撒料起司洋蔥炸雞👍👍</p>
+<p>特調紅醬年糕雞塊👍</p>
+<p><strong>感覺</strong></p>
+<p>我喜歡吃蒜，蔥，cheese，卜吉撒料起司洋蔥炸雞大推。平日中午時段去的，3-4組客人而已，食物現炸需稍等一會，值得。</p>
+<p><img src="/2020/09/05/tai-power-momstouch/set.JPG"></p>
+<p><img src="/2020/09/05/tai-power-momstouch/ricecake.JPG"></p>
+]]></content>
+      <categories>
+        <category>food</category>
+      </categories>
+      <tags>
+        <tag>天天吃美食-順便上個班</tag>
+        <tag>台電大樓</tag>
       </tags>
   </entry>
   <entry>
@@ -357,6 +398,53 @@
       </categories>
       <tags>
         <tag>提問</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台電大樓 - 真剑拉面</title>
+    <url>/2020/09/05/zhen-jian-la-mian/</url>
+    <content><![CDATA[<p><strong>餐廳地址：</strong></p>
+<p>No. 1號, Lane 126, Shida Road, Da’an District, Taipei City, 106</p>
+<p>✅Dine-in  ❌Takeaway ❌ Delivery</p>
+<p><strong>需要訂位？</strong></p>
+<p>不可訂</p>
+<p>📞: 無</p>
+<p><strong>路線</strong></p>
+<p>台電大樓3號出口出去後馬上右轉過馬路，後右轉直走1分鐘看到右手邊<code>斑馬線</code>左轉小巷就在左手旁拳擊沙包處</p>
+<div class="note warning">
+            <p><strong>店非常不起眼</strong>  </p>
+          </div>
+
+
+
+<p><strong>菜單</strong></p>
+<ul>
+<li><p>鹹味翠雞拉麵 （藍色）</p>
+</li>
+<li><p>醬油雞湯拉麵</p>
+</li>
+<li><p>豚骨拉麵</p>
+</li>
+</ul>
+<p><strong>已點</strong></p>
+<p>鹹味翠雞拉麵👍👍</p>
+<p>豚骨拉麵👍</p>
+<p><strong>感覺</strong></p>
+<p>原本以為是一家用顏色來吸引眼球的拉麵而已，結果一吃驚人，肉也真的很好吃。</p>
+<p>翠雞拉麵清淡爽口 。</p>
+<p>醬油和豚骨適合重口味的吃，湯濃稠。</p>
+<p>加面免費，吃到一半就該點了。</p>
+<p>店內蠻小，建議2人前往。</p>
+<p><img src="/2020/09/05/zhen-jian-la-mian/blue.JPG"></p>
+<p><img src="/2020/09/05/zhen-jian-la-mian/yellow.JPG"></p>
+<p><img src="/2020/09/05/zhen-jian-la-mian/store.JPG"></p>
+]]></content>
+      <categories>
+        <category>food</category>
+      </categories>
+      <tags>
+        <tag>天天吃美食-順便上個班</tag>
+        <tag>台電大樓</tag>
       </tags>
   </entry>
   <entry>
