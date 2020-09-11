@@ -173,7 +173,7 @@
 <p>在git bash中輸入下面命令，若上面已經關閉git bash的話再回到博客文件目錄右鍵打開git bash:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;輸入你的GitHub_Username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;輸入你的GitHub用的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>這邊將用<a href="mailto:&#108;&#97;&#122;&#x79;&#109;&#x61;&#x6e;&#64;&#x6c;&#105;&#102;&#101;&#x2e;&#x63;&#x6f;&#109;">&#108;&#97;&#122;&#x79;&#109;&#x61;&#x6e;&#64;&#x6c;&#105;&#102;&#101;&#x2e;&#x63;&#x6f;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
+<p>這邊將用<a href="mailto:&#x6c;&#x61;&#x7a;&#x79;&#x6d;&#x61;&#110;&#64;&#108;&#105;&#102;&#101;&#46;&#99;&#111;&#109;">&#x6c;&#x61;&#x7a;&#x79;&#x6d;&#x61;&#110;&#64;&#108;&#105;&#102;&#101;&#46;&#99;&#111;&#109;</a>作為郵箱，接著輸入進行SSH Key生成：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;lazyman@life.com&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>回到GitHub右上角頭像點擊<code>Settings</code>，往下滑找到<code>SSH and GPG keys</code>，新建一個SSH，名字可以隨意，保存之前回到Git bash輸入：</p>
@@ -277,18 +277,32 @@
       </tags>
   </entry>
   <entry>
-    <title>第一篇文章</title>
-    <url>/2020/08/22/test/</url>
-    <content><![CDATA[<p>#YOLO</p>
-<p>#Best is yet to come</p>
-<p>#讀萬卷書，躺萬里路</p>
-<p>#Is This Love</p>
+    <title>N.7 Tea Lounge 柒品茶</title>
+    <url>/2020/09/11/n7drink/</url>
+    <content><![CDATA[<p><strong>Lounge地址：</strong></p>
+<p>No. 43號, Jingwen Street, Wenshan District, Taipei City, 11669<br><a href="https://www.ubereats.com/tw/taipei/food-delivery/n7-tea-lounge%E6%9F%92%E5%93%81%E8%8C%B6/aRkm9ZDXSn-iVcovslVs7g/?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><br><img src="https://emojis.slackmojis.com/emojis/images/1582776980/7927/uber-eats.png?1582776980" align="left" alt="uber eats random" style="zoom:20%;"></a>   ✅<br><a href="https://www.foodpanda.com.tw/restaurant/b0ls?utm_campaign=google_reserve_place_order_action&utm_medium=organic&utm_source=google"><br><img src="https://assets.foodora.com/e0d0f2d/img/favicon/foodpanda/favicon-32x32.png?e0d0f2d" align="left" alt="uber eats random" style="zoom:80%;"> </a> ✅ </p>
+<p> 📞: 02 2933 8181</p>
+<p><strong>路線</strong></p>
+<p>景美站下車後<code>1號</code>出口出來，走過對面大馬路，中間會先經過警察局；繼續過前方小馬路後馬上右轉。沿著馬路30秒會先看見一芳，接著往前走到有公車站牌地方就看見。</p>
+<div class="note warning">
+            <p><strong>過了警察局後的紅綠燈等很久，可以先右轉靠著警察局走找機會JWALK過去！對面的路沒有行人道就是和摩托車差身而過，寧願被警察開單也不要被撞…</strong>  </p>
+          </div>
+
+<p><strong>菜單</strong></p>
+<p><img src="https://scontent.ftpe6-1.fna.fbcdn.net/v/t1.0-9/90013442_854400598365930_2281660049824677888_o.jpg?_nc_cat=100&_nc_sid=8bfeb9&_nc_ohc=AsycosE50p8AX_5gIpr&_nc_ht=scontent.ftpe6-1.fna&oh=d42a32b3a88e3e1f39a16c1c490f0c10&oe=5F7F6A63" alt="img"></p>
+<p><strong>已點</strong></p>
+<p>盧哈拿紅茶👍</p>
+<p>接骨木冰茶👍👍</p>
+<p><strong>感覺</strong></p>
+<p>有氣泡飲感覺比較特別，菜單的品相的確有Tea Lounge的感覺。接骨木冰茶覺得比較特別，半糖微糖都不錯。</p>
+<p>下次會嘗試玫瑰接骨木氣泡飲，但不知道加了玫瑰會不會奇怪。</p>
+<p><img src="/2020/09/11/n7drink/store.JPG"></p>
+<p>Source:</p>
+<p><a href="https://www.facebook.com/n.7tealounge/">https://www.facebook.com/n.7tealounge/</a></p>
 ]]></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
       <tags>
-        <tag>測試</tag>
+        <tag>天天吃美食-順便上個班</tag>
+        <tag>景美</tag>
       </tags>
   </entry>
   <entry>
@@ -317,6 +331,21 @@
       <tags>
         <tag>天天吃美食-順便上個班</tag>
         <tag>台電大樓</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇文章</title>
+    <url>/2020/08/22/test/</url>
+    <content><![CDATA[<p>#YOLO</p>
+<p>#Best is yet to come</p>
+<p>#讀萬卷書，躺萬里路</p>
+<p>#Is This Love</p>
+]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>測試</tag>
       </tags>
   </entry>
   <entry>
